@@ -55993,7 +55993,7 @@ function (_React$Component) {
         from: "/login/",
         to: "/admin"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "navBar-admin"
+        className: "menu-admin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "open-orders",
         className: "menu-admin__item"
@@ -56560,7 +56560,7 @@ var Home = function Home(_ref) {
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
-    path: "/magic",
+    path: "/home",
     render: function render(routeProps) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_customer_components_FrontPage_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], routeProps);
     }
@@ -57747,28 +57747,42 @@ __webpack_require__.r(__webpack_exports__);
 var NavBar = function NavBar(_ref) {
   var match = _ref.match;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navBar-admin"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "menu-customer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "menu-customer__block"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     id: "home",
-    className: "menu-admin__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/magic"
+    className: "menu-customer__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    activeStyle: {
+      color: "red"
+    },
+    to: "/home"
   }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     id: "builder",
-    className: "menu-admin__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "menu-customer__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    activeStyle: {
+      color: "red"
+    },
     to: "/magic/builder"
-  }, "Builder")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    id: "checkout",
-    className: "menu-admin__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/magic/checkout"
-  }, "Checkout")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    id: "login",
-    className: "menu-admin__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/login"
-  }, "Login")))));
+  }, "Build a Pizza")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    id: "about",
+    className: "menu-customer__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    activeStyle: {
+      color: "red"
+    },
+    to: "/magic/about"
+  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    id: "contact",
+    className: "menu-customer__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    activeStyle: {
+      color: "red"
+    },
+    to: "/magic/contact"
+  }, "Contact")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);

@@ -28,7 +28,7 @@ const Home = ( { match } ) => {
                     <Checkout {...routeProps} ingredientProps={ingredientProps} />
                 )} />
 
-                <Route exact path='/magic' render={( routeProps ) => (
+                <Route exact path='/home' render={( routeProps ) => (
                     <FrontPage {...routeProps} />
                 )} />
 
