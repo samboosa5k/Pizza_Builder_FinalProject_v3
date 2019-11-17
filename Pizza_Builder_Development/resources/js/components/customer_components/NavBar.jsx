@@ -1,27 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const NavBar = ( { match } ) => {
     return (
         <>
+            <div className="menu-customer">
+                <ul className="menu-customer__block">
 
-            <div className="navBar-admin">
-                <ul>
-
-                    <li id="home" className="menu-admin__item">
-                        <Link to="/magic">Home</Link>
+                    <li id="home" className="menu-customer__item">
+                        <NavLink activeStyle={{ color: "red" }} to="/home">Home</NavLink>
                     </li>
 
-                    <li id="builder" className="menu-admin__item">
-                        <Link to="/magic/builder">Builder</Link>
+                    <li id="builder" className="menu-customer__item">
+                        <NavLink activeStyle={{ color: "red" }} to="/magic/builder">Build a Pizza</NavLink>
                     </li>
 
-                    <li id="checkout" className="menu-admin__item">
-                        <Link to='/magic/checkout'>Checkout</Link>
+                    <li id="about" className="menu-customer__item">
+                        <NavLink activeStyle={{ color: "red" }} to='/magic/about'>About</NavLink>
                     </li>
-
-                    <li id="login" className="menu-admin__item">
-                        <a href="/login">Login</a>
+                    <li id="contact" className="menu-customer__item">
+                        <NavLink activeStyle={{ color: "red" }} to='/magic/contact'>Contact</NavLink>
                     </li>
 
                 </ul>

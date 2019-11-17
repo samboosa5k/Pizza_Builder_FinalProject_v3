@@ -2,6 +2,7 @@
 @import 'login-admin.scss';
 @import 'ingredients-admin.scss';
 @import 'orders-admin.scss';
+@import 'menu-customer.scss';
 
 * {
     margin: 0;
@@ -24,13 +25,6 @@ body {
     flex-direction: row;
 }
 
-.navBar-admin {
-    display: flex;
-    flex-direction: column;
-    min-width: 240px;
-    height: 100vh;
-    background-color: rgb(23, 24, 26);
-}
 
 .mainContent-admin {
     width: 100%;
