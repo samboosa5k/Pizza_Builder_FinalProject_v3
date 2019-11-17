@@ -1,14 +1,47 @@
 import React from 'react';
+import BurgerBuilder from '../builder/BurgerBuilder/BurgerBuilder.jsx';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-const FrontPage = ( props ) => {
-    return (
-        <>
-            <div style={{ width: "100%", textAlign: "center" }}>
-                <h1>This is the home page</h1>
-                <p>Soon this will show the view created by Jayne & Adi</p>
+import '../index.scss';
+
+
+export default class FrontPage extends React.Component {
+
+    render() {
+        // let container = document.querySelector('.container');
+        // const change = (x) => {
+        //     container.classList.toggle('change');
+        // }
+        // container.addEventListener('click', change);
+
+        return (
+        
+            <div className="frontpage">
+
+                <div className="bars">
+                    <div className="container">
+                        <div className="bar1"></div>
+                        <div className="bar2"></div>
+                        <div className="bar3"></div>
+                    </div>
+                </div>
+<Router>
+                <div className="center">
+                    <h2>!click here to build your own pizza!</h2>
+                    <button type="button" className="button">
+                        {/* <Route path="/burgerbuilder" component={BurgerBuilder} /> */}
+                        {/* <Route path="/burgerbuilder" render={props => (
+                            <React.Fragment>
+                    <a href={<BurgerBuilder />}>Pizza Time!</a>
+                            </React.Fragment>
+                        )} /> */}
+                        
+                    </button>
+                </div>
+</Router>
             </div>
-        </>
-    )
+        
+        );
+    }
+    
 }
-
-export default FrontPage;
