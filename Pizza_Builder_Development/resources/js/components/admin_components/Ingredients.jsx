@@ -9,7 +9,7 @@ class Ingredients extends React.Component {
     }
 
     componentDidMount() {
-        fetch( 'http://127.0.0.1:8000/api/ingredients' )
+        fetch( '/api/ingredients' )
             .then( response => response.json() )
             .then( data => {
                 this.setState( { apiResponse: data } );

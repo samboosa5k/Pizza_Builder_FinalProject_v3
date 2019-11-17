@@ -55955,7 +55955,7 @@ function (_React$Component) {
     value: function loadAdmin() {
       var _this2 = this;
 
-      fetch('http://127.0.0.1:8000/management', {
+      fetch('/management', {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + this.props.token.token,
@@ -56185,7 +56185,7 @@ function (_React$Component) {
           status: 'logged_out'
         }); //  If login details are invalid, stay logged out
       } else {
-        fetch('http://127.0.0.1:8000/api/auth/login', {
+        fetch('/api/auth/login', {
           method: 'POST',
           withCredentials: true,
           credentials: 'include',
@@ -56624,7 +56624,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('http://127.0.0.1:8000/api/ingredients').then(function (response) {
+      fetch('/api/ingredients').then(function (response) {
         return response.json();
       }).then(function (data) {
         _this2.setState({
@@ -56824,7 +56824,7 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       event.preventDefault();
-      fetch('http://127.0.0.1:8000/order/finalize', {
+      fetch('/order/finalize', {
         method: 'POST',
         headers: {
           'X-Requested-With': 'XMLHttpRequest',
@@ -57793,8 +57793,8 @@ var NavBar = function NavBar(_ref) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\web\Pizza_Builder_FinalProject\Pizza_Builder_Development\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\web\Pizza_Builder_FinalProject\Pizza_Builder_Development\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\web\Pizza_Builder_FinalProject_v2\Pizza_Builder_Development\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\web\Pizza_Builder_FinalProject_v2\Pizza_Builder_Development\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

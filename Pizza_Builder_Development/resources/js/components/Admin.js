@@ -20,7 +20,7 @@ class Admin extends React.Component {
     }
 
     loadAdmin() {
-        fetch( 'http://127.0.0.1:8000/management', {
+        fetch( '/management', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + this.props.token.token,

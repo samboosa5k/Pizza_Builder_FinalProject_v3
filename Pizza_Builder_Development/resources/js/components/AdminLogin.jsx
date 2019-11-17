@@ -50,7 +50,7 @@ class AdminLogin extends React.Component {
                 status: 'logged_out'
             } ); //  If login details are invalid, stay logged out
         } else {
-            fetch( 'http://127.0.0.1:8000/api/auth/login', {
+            fetch( '/api/auth/login', {
                 method: 'POST',
                 withCredentials: true,
                 credentials: 'include',

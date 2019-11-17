@@ -24,7 +24,7 @@ class OrderCheckout extends React.Component {
     handleSubmit( event ) {
         event.preventDefault();
 
-        fetch( 'http://127.0.0.1:8000/order/finalize', {
+        fetch( '/order/finalize', {
             method: 'POST',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
