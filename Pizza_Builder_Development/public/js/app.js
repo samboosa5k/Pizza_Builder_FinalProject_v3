@@ -1921,14 +1921,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/Burger.css":
-/*!************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/Burger.css ***!
-  \************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Burger.css":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/Burger.css ***!
+  \**************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -1940,14 +1940,109 @@ exports.push([module.i, ".Burger {\n    width: 100%;\n    margin: auto;\n    hei
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/burgeringredient.css":
-/*!**********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/burgeringredient.css ***!
-  \**********************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Controls/buildcontrol.css":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/Controls/buildcontrol.css ***!
+  \*****************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".BuildControl {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n            align-items: center;\n    margin: 5px 0;\n}\n\n.BuildControl button {\n    display: block;\n    font: inherit;\n    padding: 5px;\n    margin: 0 5px;\n    width: 80px;\n    border: 1px solid #AA6817;\n    cursor: pointer;\n    outline: none;\n}\n\n.BuildControl button:disabled {\n    background-color: #AC9980;\n    border: 1px solid #7E7365;\n    color: #ccc;\n    cursor: default;\n}\n\n.BuildControl button:hover:disabled {\n    background-color: #AC9980;\n    color: #ccc;\n    cursor: not-allowed;\n}\n\n.Label {\n    padding: 10px;\n    font-weight: bold;\n    width: 80px;\n}\n\n.BuildControl .Less {  \n    background-color: #D39952;\n    color: white;\n}\n\n.BuildControl .More {\n    background-color: #8F5E1E;\n    color: white;\n}\n\n.BuildControl .Less:hover, .BuildControl .Less:active {  \n    background-color: #DAA972;\n    color: white;\n}\n\n.BuildControl .More:hover,.BuildControl .More:active {\n    background-color: #99703F;\n    color: white;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Controls/buildcontrols.css":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/Controls/buildcontrols.css ***!
+  \******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".BuildControls {\n    width: 100%;\n    background-color: #CF8F2E;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-flow: column;\n    -webkit-box-align: center;\n            align-items: center;\n    box-shadow: 0 2px 1px #ccc;\n    margin:a uto;\n    padding: 10px 0;\n\n}\n\n\n.OrderButton {\n    background-color: #DAD735;\n    outline: none;\n    cursor: pointer;\n    border: 1px solid #966909;\n    color: #966909;\n    font-family: inherit;\n    font-size: 1.2em;\n    padding: 15px 30px;\n    box-shadow: 2px 2px 2px #966909;\n}\n\n.OrderButton:hover, .OrderButton:active {\n    background-color: #A0DB41;\n    border: 1px solid #966909;\n    color: #966909;\n}\n\n.OrderButton:disabled {\n    background-color: #C7C6C6;\n    cursor: not-allowed;\n    border: 1px solid #ccc;\n    color: #888888;\n}\n\n.OrderButton:not(:disabled) {\n    -webkit-animation: enable 0.3s linear;\n            animation: enable 0.3s linear;\n}\n\n@-webkit-keyframes enable {\n    0% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    60% {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    100% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n}\n\n@keyframes enable {\n    0% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    60% {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    100% {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Summary/backdrop.css":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/Summary/backdrop.css ***!
+  \************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Backdrop {\n    width: 100%;\n    height: 100%;\n    position: fixed;\n    z-index: 100;\n    left: 0;\n    top: 0;\n    background-color: rgba(0, 0, 0, 0.5); \n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Summary/button.css":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/Summary/button.css ***!
+  \**********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Button {\n    background-color: transparent;\n    border: none;\n    color: black;\n    outline: none;\n    cursor: pointer;\n    font: inherit;\n    padding: 10px;\n    margin: 10px;\n    font-weight: bold;\n}\n\n.Button:first-of-type {\n    margin-left: 0;\n    padding-left: 0;\n}\n\n.Success {\n    color: #5C9210;\n}\n\n.Danger {\n    color: #944317;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Summary/modal.css":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/Summary/modal.css ***!
+  \*********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Modal {\n    position: fixed;\n    z-index: 500;\n    background-color: white;\n    width: 70%;\n    border: 1px solid #ccc;\n    box-shadow: 1px 1px 1px black;\n    padding: 16px;\n    left: 15%;\n    top: 30%;\n    box-sizing: border-box;\n    -webkit-transition: all 0.3s ease-out;\n    transition: all 0.3s ease-out;\n}\n\n@media (min-width: 600px) {\n    .Modal {\n        width: 500px;\n        left: calc(50% - 250px);\n    }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/burgeringredient.css":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/builder/BurgerBuilder/burgeringredient.css ***!
+  \************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -56511,7 +56606,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _customer_components_NavBar_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./customer_components/NavBar.jsx */ "./resources/js/components/customer_components/NavBar.jsx");
-/* harmony import */ var _builder_BurgerBuilder_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./builder/BurgerBuilder.jsx */ "./resources/js/components/builder/BurgerBuilder.jsx");
+/* harmony import */ var _builder_BurgerBuilder_BurgerBuilder_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./builder/BurgerBuilder/BurgerBuilder.jsx */ "./resources/js/components/builder/BurgerBuilder/BurgerBuilder.jsx");
 /* harmony import */ var _customer_components_FrontPage_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./customer_components/FrontPage.jsx */ "./resources/js/components/customer_components/FrontPage.jsx");
 /* harmony import */ var _customer_components_Checkout_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./customer_components/Checkout.jsx */ "./resources/js/components/customer_components/Checkout.jsx");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -56544,11 +56639,19 @@ var Home = function Home(_ref) {
       ingredientProps = _useState2[0],
       setIngredientProps = _useState2[1];
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_customer_components_NavBar_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_customer_components_NavBar_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "builder-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/magic/builder",
     render: function render(routeProps) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_builder_BurgerBuilder_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], routeProps);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_builder_BurgerBuilder_BurgerBuilder_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], routeProps);
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/home",
+    render: function render(routeProps) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_customer_components_FrontPage_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], routeProps);
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
@@ -56560,11 +56663,11 @@ var Home = function Home(_ref) {
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
-    path: "/home",
+    path: "/magic",
     render: function render(routeProps) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_customer_components_FrontPage_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], routeProps);
     }
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -57120,15 +57223,15 @@ var PopDetails = function PopDetails(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/builder/Burger.css":
-/*!****************************************************!*\
-  !*** ./resources/js/components/builder/Burger.css ***!
-  \****************************************************/
+/***/ "./resources/js/components/builder/BurgerBuilder/Burger.css":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Burger.css ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./Burger.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/Burger.css");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./Burger.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Burger.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -57142,7 +57245,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -57150,10 +57253,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/builder/Burger.jsx":
-/*!****************************************************!*\
-  !*** ./resources/js/components/builder/Burger.jsx ***!
-  \****************************************************/
+/***/ "./resources/js/components/builder/BurgerBuilder/Burger.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Burger.jsx ***!
+  \******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57161,9 +57264,9 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Burger_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Burger.css */ "./resources/js/components/builder/Burger.css");
+/* harmony import */ var _Burger_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Burger.css */ "./resources/js/components/builder/BurgerBuilder/Burger.css");
 /* harmony import */ var _Burger_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Burger_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _BurgerIngredient_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BurgerIngredient.jsx */ "./resources/js/components/builder/BurgerIngredient.jsx");
+/* harmony import */ var _BurgerIngredient_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BurgerIngredient.jsx */ "./resources/js/components/builder/BurgerBuilder/BurgerIngredient.jsx");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -57205,10 +57308,10 @@ var burger = function burger(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/builder/BurgerBuilder.jsx":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/builder/BurgerBuilder.jsx ***!
-  \***********************************************************/
+/***/ "./resources/js/components/builder/BurgerBuilder/BurgerBuilder.jsx":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/BurgerBuilder.jsx ***!
+  \*************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57216,7 +57319,11 @@ var burger = function burger(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Burger_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Burger.jsx */ "./resources/js/components/builder/Burger.jsx");
+/* harmony import */ var _hoc_Aux_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hoc/Aux.jsx */ "./resources/js/components/builder/hoc/Aux.jsx");
+/* harmony import */ var _Burger_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Burger.jsx */ "./resources/js/components/builder/BurgerBuilder/Burger.jsx");
+/* harmony import */ var _Controls_BuildControls_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Controls/BuildControls.jsx */ "./resources/js/components/builder/BurgerBuilder/Controls/BuildControls.jsx");
+/* harmony import */ var _Summary_Modal_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Summary/Modal.jsx */ "./resources/js/components/builder/BurgerBuilder/Summary/Modal.jsx");
+/* harmony import */ var _Summary_DisplaySummary_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Summary/DisplaySummary.jsx */ "./resources/js/components/builder/BurgerBuilder/Summary/DisplaySummary.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -57241,11 +57348,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import Aux from '../../hoc/Aux.jsx';
 
- // import BuildControls from './BuildControls.jsx';
-// import Modal from '../../components/UI/Modal/Modal.jsx';
-// import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary.jsx';
+
+
+
+
 
 var INGREDIENT_PRICES = {
   salad: 0.5,
@@ -57371,8 +57478,23 @@ function (_Component) {
         disabledInfo[key] = disabledInfo[key] <= 0;
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Burger_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_Aux_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Summary_Modal_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        show: this.state.purchasing,
+        modalClosed: this.purchaseCancelHandler
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Summary_DisplaySummary_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        ingredients: this.state.ingredients,
+        price: this.state.totalPrice,
+        purchaseCancelled: this.purchaseCancelHandler,
+        purchaseContinued: this.purchaseContinueHandler
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Burger_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         ingredients: this.state.ingredients
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Controls_BuildControls_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        ingredientAdded: this.addIngredientHandler,
+        ingredientRemoved: this.removeIngredientHandler,
+        disabled: disabledInfo,
+        purchasable: this.state.purchasable,
+        ordered: this.purchaseHandler,
+        price: this.state.totalPrice
       }));
     }
   }]);
@@ -57384,10 +57506,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/builder/BurgerIngredient.jsx":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/builder/BurgerIngredient.jsx ***!
-  \**************************************************************/
+/***/ "./resources/js/components/builder/BurgerBuilder/BurgerIngredient.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/BurgerIngredient.jsx ***!
+  \****************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57397,7 +57519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _burgeringredient_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./burgeringredient.css */ "./resources/js/components/builder/burgeringredient.css");
+/* harmony import */ var _burgeringredient_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./burgeringredient.css */ "./resources/js/components/builder/BurgerBuilder/burgeringredient.css");
 /* harmony import */ var _burgeringredient_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_burgeringredient_css__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -57496,15 +57618,107 @@ BurgerIngredient.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/components/builder/burgeringredient.css":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/builder/burgeringredient.css ***!
-  \**************************************************************/
+/***/ "./resources/js/components/builder/BurgerBuilder/Controls/BuildControl.jsx":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Controls/BuildControl.jsx ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _buildcontrol_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buildcontrol.css */ "./resources/js/components/builder/BurgerBuilder/Controls/buildcontrol.css");
+/* harmony import */ var _buildcontrol_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_buildcontrol_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var buildControl = function buildControl(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "BuildControl"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Label"
+  }, props.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "Less",
+    onClick: props.removed,
+    disabled: props.disabled
+  }, "Less"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "More",
+    onClick: props.added
+  }, "More"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (buildControl);
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Controls/BuildControls.jsx":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Controls/BuildControls.jsx ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _buildcontrols_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buildcontrols.css */ "./resources/js/components/builder/BurgerBuilder/Controls/buildcontrols.css");
+/* harmony import */ var _buildcontrols_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_buildcontrols_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _BuildControl_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BuildControl.jsx */ "./resources/js/components/builder/BurgerBuilder/Controls/BuildControl.jsx");
+
+
+
+var controls = [{
+  label: 'Salad',
+  type: 'salad'
+}, {
+  label: 'Bacon',
+  type: 'bacon'
+}, {
+  label: 'Cheese',
+  type: 'cheese'
+}, {
+  label: 'Meat',
+  type: 'meat'
+}];
+
+var buildControls = function buildControls(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "BuildControls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Current Price: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, props.price.toFixed(2))), controls.map(function (ctrl) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuildControl_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: ctrl.label,
+      label: ctrl.label,
+      added: function added() {
+        return props.ingredientAdded(ctrl.type);
+      },
+      removed: function removed() {
+        return props.ingredientRemoved(ctrl.type);
+      },
+      disabled: props.disabled[ctrl.type]
+    });
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "OrderButton",
+    disabled: !props.purchasable,
+    onClick: props.ordered
+  }, "ORDER NOW"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (buildControls);
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Controls/buildcontrol.css":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Controls/buildcontrol.css ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./burgeringredient.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/burgeringredient.css");
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./buildcontrol.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Controls/buildcontrol.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -57518,11 +57732,309 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Controls/buildcontrols.css":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Controls/buildcontrols.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./buildcontrols.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Controls/buildcontrols.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/Backdrop.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/Backdrop.jsx ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _backdrop_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./backdrop.css */ "./resources/js/components/builder/BurgerBuilder/Summary/backdrop.css");
+/* harmony import */ var _backdrop_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_backdrop_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var backdrop = function backdrop(props) {
+  return props.show ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Backdrop",
+    onClick: props.clicked
+  }) : null;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (backdrop);
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/Button.jsx":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/Button.jsx ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _button_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./button.css */ "./resources/js/components/builder/BurgerBuilder/Summary/button.css");
+/* harmony import */ var _button_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_button_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var button = function button(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "Button",
+    onClick: props.clicked
+  }, props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (button);
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/DisplaySummary.jsx":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/DisplaySummary.jsx ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Button_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button.jsx */ "./resources/js/components/builder/BurgerBuilder/Summary/Button.jsx");
+/* harmony import */ var _button_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button.css */ "./resources/js/components/builder/BurgerBuilder/Summary/button.css");
+/* harmony import */ var _button_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_button_css__WEBPACK_IMPORTED_MODULE_2__);
+ // import Aux from '../../../hoc/Aux.jsx';
+
+
+
+
+var orderSummary = function orderSummary(props) {
+  var ingredientSummary = Object.keys(props.ingredients).map(function (igKey) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: igKey
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        textTransform: 'capitalize'
+      }
+    }, igKey), ": ", props.ingredients[igKey]);
+  });
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Your Order"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A delicious burger with the following ingredients:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, ingredientSummary), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Total Price: ", props.price.toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Continue to Checkout?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "Danger",
+    clicked: props.purchaseCancelled
+  }, "CANCEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    clicked: props.purchaseContinued
+  }, "CONTINUE"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (orderSummary);
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/Modal.jsx":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/Modal.jsx ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modal_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal.css */ "./resources/js/components/builder/BurgerBuilder/Summary/modal.css");
+/* harmony import */ var _modal_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modal_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Backdrop_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Backdrop.jsx */ "./resources/js/components/builder/BurgerBuilder/Summary/Backdrop.jsx");
+
+ // import Aux from '../../../hoc/Aux.jsx';
+
+
+
+var modal = function modal(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Backdrop_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    show: props.show,
+    clicked: props.modalClosed
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Modal",
+    style: {
+      transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+      opacity: props.show ? '1' : '0'
+    }
+  }, props.children));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/backdrop.css":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/backdrop.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./backdrop.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Summary/backdrop.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/button.css":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/button.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./button.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Summary/button.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/Summary/modal.css":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/Summary/modal.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./modal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/Summary/modal.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/BurgerBuilder/burgeringredient.css":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/builder/BurgerBuilder/burgeringredient.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./burgeringredient.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/builder/BurgerBuilder/burgeringredient.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/builder/hoc/Aux.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/builder/hoc/Aux.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var aux = function aux(props) {
+  return props.children;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (aux);
 
 /***/ }),
 
