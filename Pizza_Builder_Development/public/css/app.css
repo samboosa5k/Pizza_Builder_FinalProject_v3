@@ -1,0 +1,224 @@
+.menu-admin {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  min-width: 240px;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  background-color: #17181a;
+}
+
+.menu-admin__item {
+  padding: 1rem;
+  background-color: #34343f;
+  color: white;
+  border: 1px solid rgba(98, 102, 116, 0.8);
+  text-shadow: 1px 1px 1px black;
+  list-style-type: none;
+}
+
+.menu-admin__item a {
+  color: white;
+}
+
+.menu-admin__logout {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: coral;
+}
+
+.admin-login__wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-login__header {
+  font-size: 8rem;
+  text-align: center;
+  text-shadow: -2px -4px 2px #00f7ff, 2px 4px 2px #ff1e00;
+}
+
+.admin-login__form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  width: 640px;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.726);
+}
+
+.admin-login__input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-login__button {
+  margin-top: 1rem;
+}
+
+.ingredients-single {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem #1f1f1f;
+}
+
+.ingredients-single__element {
+  padding: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.692);
+}
+
+.ingredients-single:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.918);
+}
+
+.ingredients-single:nth-child(2n+1) {
+  background-color: rgba(217, 236, 247, 0.699);
+}
+
+.orders-single {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem #1f1f1f;
+}
+
+.orders-single__information {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.orders-single__bottom-menu {
+  display: -webkit-box;
+  display: flex;
+  width: auto;
+}
+
+.orders-single__details-button {
+  padding: 0.5rem;
+  color: black;
+  background-color: rgba(130, 205, 248, 0.699);
+  text-shadow: 2px 2px 2px white;
+}
+
+.orders-single__element {
+  padding: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.692);
+}
+
+.orders-single__popDetails {
+  background-color: white;
+  height: 128px;
+}
+
+.orders-single:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.918);
+}
+
+.orders-single:nth-child(2n+1) {
+  background-color: rgba(217, 236, 247, 0.699);
+}
+
+.menu-customer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  min-width: 240px;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  background-color: #1f2020;
+}
+
+.menu-customer__block {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.menu-customer__item {
+  padding: 1rem;
+  background-color: #34343f;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  list-style-type: none;
+}
+
+.menu-customer__item--active {
+  border-bottom: 3px solid #81fa81;
+}
+
+.menu-customer__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.builder-container {
+  width: 100%;
+  background-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: #31333a;
+}
+
+#app {
+  display: -webkit-box;
+  display: flex;
+}
+
+#login {
+  height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.mainContent-admin {
+  width: 100%;
+  height: 100vh;
+}
+
+.nostyle-links {
+  list-style-type: none;
+  text-decoration: none;
+}
+
