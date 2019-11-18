@@ -57238,6 +57238,11 @@ function (_React$Component) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Home_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], routeProps);
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/home",
+        render: function render(routeProps) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Home_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], routeProps);
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/",
         render: function render(routeProps) {
@@ -57396,7 +57401,7 @@ var Home = function Home(_ref) {
       setOrderIngredients = _useState4[1];
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_customer_components_NavBar_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "builder-container"
+    className: "mainContent-customer"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/magic/builder",
@@ -59056,12 +59061,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var FrontPage = function FrontPage(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "splash-header"
+  }, "It's pizza time, baby!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info-card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: {
       width: "100%",
       textAlign: "center"
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is the home page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Soon this will show the view created by Jayne & Adi")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is the home page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Soon this will show the view created by Jayne & Adi"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FrontPage);
@@ -59080,6 +59089,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _general_components_CornerCredits_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../general_components/CornerCredits.jsx */ "./resources/js/components/general_components/CornerCredits.jsx");
+
 
 
 
@@ -59087,36 +59098,59 @@ var NavBar = function NavBar(_ref) {
   var match = _ref.match;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "menu-customer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "menu-customer__block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    id: "home",
-    className: "menu-customer__item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menu-customer__top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "image/pizza_logo.svg",
+    className: "menu-customer__logo",
+    alt: "jaj-team-logo"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menu-customer__menu"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "menu-customer__item",
     activeClassName: "menu-customer__item--active",
     to: "/home"
-  }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    id: "builder",
-    className: "menu-customer__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+  }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "menu-customer__item",
     activeClassName: "menu-customer__item--active",
     to: "/magic/builder"
-  }, "Build a Pizza")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    id: "about",
-    className: "menu-customer__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+  }, "Build a Pizza"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "menu-customer__item",
     activeClassName: "menu-customer__item--active",
     to: "/magic/about"
-  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    id: "contact",
-    className: "menu-customer__item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+  }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "menu-customer__item",
     activeClassName: "menu-customer__item--active",
     to: "/magic/contact"
-  }, "Contact")))));
+  }, "Contact")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menu-customer__bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_general_components_CornerCredits_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./resources/js/components/general_components/CornerCredits.jsx":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/general_components/CornerCredits.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var CornerCredits = function CornerCredits() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "corner-credits"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Jayne Philips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Adi Byrne"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Jasper Verbon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "2019"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CornerCredits);
 
 /***/ }),
 

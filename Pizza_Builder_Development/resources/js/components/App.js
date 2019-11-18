@@ -43,6 +43,10 @@ class App extends React.Component {
                             <Home {...routeProps} />
                         )} />
 
+                        <Route path='/home' render={( routeProps ) => (
+                            <Home {...routeProps} />
+                        )} />
+
                         <Route exact path='/' render={( routeProps ) => (
                             <Home {...routeProps} />
                         )} />

@@ -24,7 +24,7 @@ const Home = ( { match } ) => {
 
                 <NavBar />
 
-                <div className='builder-container'>
+                <div className='mainContent-customer'>
 
                     <Route exact path='/magic/builder' render={( routeProps ) => (
                         <BurgerBuilder {...routeProps} submitOrderIngredients={setOrderIngredients} />

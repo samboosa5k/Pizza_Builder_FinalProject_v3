@@ -1,36 +1,39 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import CornerCredits from '../general_components/CornerCredits.jsx';
 
 const NavBar = ( { match } ) => {
     return (
         <>
             <div className="menu-customer">
-                <ul className="menu-customer__block">
+                <div className="menu-customer__top">
+                    <img src="image/pizza_logo.svg" className="menu-customer__logo" alt="jaj-team-logo" />
+                </div>
+                <div className="menu-customer__menu">
 
-                    <li id="home" className="menu-customer__item">
-                        <NavLink
-                            activeClassName="menu-customer__item--active"
-                            to="/home">Home</NavLink>
-                    </li>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to="/home">Home</NavLink>
 
-                    <li id="builder" className="menu-customer__item">
-                        <NavLink
-                            activeClassName="menu-customer__item--active"
-                            to="/magic/builder">Build a Pizza</NavLink>
-                    </li>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to="/magic/builder">Build a Pizza</NavLink>
 
-                    <li id="about" className="menu-customer__item">
-                        <NavLink
-                            activeClassName="menu-customer__item--active"
-                            to='/magic/about'>About</NavLink>
-                    </li>
-                    <li id="contact" className="menu-customer__item">
-                        <NavLink
-                            activeClassName="menu-customer__item--active"
-                            to='/magic/contact'>Contact</NavLink>
-                    </li>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to='/magic/about'>About</NavLink>
 
-                </ul>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to='/magic/contact'>Contact</NavLink>
+                </div>
+                <div className="menu-customer__bottom">
+                    <CornerCredits />
+                </div>
             </div>
 
         </>
