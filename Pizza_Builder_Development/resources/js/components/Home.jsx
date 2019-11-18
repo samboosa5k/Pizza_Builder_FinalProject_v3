@@ -16,6 +16,8 @@ const Home = ( { match } ) => {
         }
     } );
 
+    const [orderIngredients, setOrderIngredients] = useState( {} );
+
     return (
         <>
             <Router>
@@ -25,7 +27,7 @@ const Home = ( { match } ) => {
                 <div className='builder-container'>
 
                     <Route exact path='/magic/builder' render={( routeProps ) => (
-                        <BurgerBuilder {...routeProps} />
+                        <BurgerBuilder {...routeProps} submitOrderIngredients={setOrderIngredients} />
                     )} />
 
                     <Route exact path='/home' render={( routeProps ) => (
