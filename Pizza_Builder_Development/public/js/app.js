@@ -57467,7 +57467,33 @@ function (_Component) {
   }, {
     key: "purchaseContinueHandler",
     value: function purchaseContinueHandler() {
-      alert('You continue!');
+      // alert( 'You continue!' );
+      var order = {
+        ingredients: this.state.ingredients,
+        price: this.state.totalPrice,
+        //you would normally recalculate on the server
+        customer: {
+          name: 'Jayne Phillips',
+          address: {
+            street: 'Test street 1',
+            zipCode: '12345'
+          },
+          email: 'test@test.com'
+        }
+      };
+      fetch('/admin/open-orders', order, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({// "movie_id": this.state.movie_id,
+          // "user_id": 1
+        })
+      }).then(function (response) {
+        return console.log(response);
+      }); // .then(this.setState({
+      //     favorite: !this.state.favorite
+      // }));
     }
   }, {
     key: "render",

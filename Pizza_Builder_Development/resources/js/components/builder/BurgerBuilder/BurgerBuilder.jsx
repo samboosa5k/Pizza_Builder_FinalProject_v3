@@ -93,7 +93,35 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler() {
-        alert( 'You continue!' );
+        // alert( 'You continue!' );
+        const order = {
+            ingredients: this.state.ingredients,
+            price: this.state.totalPrice, //you would normally recalculate on the server
+            customer: {
+                name: 'Jayne Phillips',
+                address: {
+                    street: 'Test street 1',
+                    zipCode: '12345'
+                },
+                email: 'test@test.com'
+            },
+        }
+        fetch('/admin/open-orders', order, 
+        {
+            method: 'POST',
+            headers: {
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify({
+                // "movie_id": this.state.movie_id,
+                // "user_id": 1
+            })
+        }
+        )
+        .then(response => console.log(response))
+        // .then(this.setState({
+        //     favorite: !this.state.favorite
+        // }));
     }
 
     render() {
@@ -113,6 +141,7 @@ class BurgerBuilder extends Component {
                         purchaseCancelled={this.purchaseCancelHandler}
                         purchaseContinued={this.purchaseContinueHandler} />
                 </Modal>
+                
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     ingredientAdded={this.addIngredientHandler}
