@@ -21,8 +21,8 @@
         text-align: center;
         list-style-type: none;
 
-        &-selected {
-            border-bottom: 2px solid green;
+        &--active {
+            border-bottom: 3px solid rgb(129, 250, 129);
         }
 
         a {

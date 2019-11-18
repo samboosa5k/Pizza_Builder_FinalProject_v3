@@ -8,18 +8,26 @@ const NavBar = ( { match } ) => {
                 <ul className="menu-customer__block">
 
                     <li id="home" className="menu-customer__item">
-                        <NavLink activeStyle={{ color: "red" }} to="/home">Home</NavLink>
+                        <NavLink
+                            activeClassName="menu-customer__item--active"
+                            to="/home">Home</NavLink>
                     </li>
 
                     <li id="builder" className="menu-customer__item">
-                        <NavLink activeStyle={{ color: "red" }} to="/magic/builder">Build a Pizza</NavLink>
+                        <NavLink
+                            activeClassName="menu-customer__item--active"
+                            to="/magic/builder">Build a Pizza</NavLink>
                     </li>
 
                     <li id="about" className="menu-customer__item">
-                        <NavLink activeStyle={{ color: "red" }} to='/magic/about'>About</NavLink>
+                        <NavLink
+                            activeClassName="menu-customer__item--active"
+                            to='/magic/about'>About</NavLink>
                     </li>
                     <li id="contact" className="menu-customer__item">
-                        <NavLink activeStyle={{ color: "red" }} to='/magic/contact'>Contact</NavLink>
+                        <NavLink
+                            activeClassName="menu-customer__item--active"
+                            to='/magic/contact'>Contact</NavLink>
                     </li>
 
                 </ul>

@@ -173,8 +173,8 @@
   list-style-type: none;
 }
 
-.menu-customer__item-selected {
-  border-bottom: 2px solid green;
+.menu-customer__item--active {
+  border-bottom: 3px solid #81fa81;
 }
 
 .menu-customer__item a {

@@ -6,6 +6,8 @@ import BurgerBuilder from './builder/BurgerBuilder/BurgerBuilder.jsx';
 import FrontPage from './customer_components/FrontPage.jsx';
 import Checkout from './customer_components/Checkout.jsx';
 
+import ErrorBoundary from './ErrorBoundary.jsx';
+
 const Home = ( { match } ) => {
     const [ingredientProps, setIngredientProps] = useState( {
         "pizza_1": {
@@ -29,7 +31,7 @@ const Home = ( { match } ) => {
                     <Route exact path='/home' render={( routeProps ) => (
                         <FrontPage {...routeProps} />
                     )} />
-                    
+
                     <Route exact path='/magic/checkout' render={( routeProps ) => (
                         <Checkout {...routeProps} ingredientProps={ingredientProps} />
                     )} />
