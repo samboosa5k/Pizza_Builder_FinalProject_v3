@@ -51,7 +51,7 @@ class Admin extends React.Component {
 
                     <Redirect from='/login/' to="/admin" />
 
-                    <div className="navBar-admin">
+                    <div className="menu-admin">
                         <ul>
 
                             <li id="open-orders" className="menu-admin__item">

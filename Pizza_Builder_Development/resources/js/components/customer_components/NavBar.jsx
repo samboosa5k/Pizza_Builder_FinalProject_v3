@@ -1,34 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import CornerCredits from '../general_components/CornerCredits.jsx';
 
 const NavBar = ( { match } ) => {
     return (
         <>
+            <div className="menu-customer">
+                <div className="menu-customer__top">
+                    <img src="image/pizza_logo.svg" className="menu-customer__logo" alt="jaj-team-logo" />
+                </div>
+                <div className="menu-customer__menu">
 
-            <div className="navBar-admin">
-                <ul>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to="/home">Home</NavLink>
 
-                    <li id="home" className="menu-admin__item">
-                        <Link to="/magic">Home</Link>
-                    </li>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to="/magic/builder">Build a Pizza</NavLink>
 
-                    <li id="builder" className="menu-admin__item">
-                        <Link to="/magic/builder">Builder</Link>
-                    </li>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to='/about'>About</NavLink>
 
-                    <li id="checkout" className="menu-admin__item">
-                        <Link to='/magic/checkout'>Checkout</Link>
-                    </li>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to='/magic/contact'>Contact</NavLink>
 
-                    <li id="receipt" className="menu-admin__item">
-                        <Link to='/magic/receipt'>Receipt</Link>
-                    </li>
-
-                    <li id="login" className="menu-admin__item">
-                        <a href="/login">Login</a>
-                    </li>
-
-                </ul>
+                </div>
+                <div className="menu-customer__bottom">
+                    <CornerCredits />
+                </div>
             </div>
 
         </>

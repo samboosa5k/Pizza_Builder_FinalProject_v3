@@ -1,9 +1,17 @@
+// Style files
 @import 'menu-admin.scss';
 @import 'login-admin.scss';
 @import 'ingredients-admin.scss';
 @import 'orders-admin.scss';
 @import 'order-summary-page.scss';
 @import 'header.scss';
+@import 'splash-customer.scss';
+@import 'menu-customer.scss';
+@import 'builder-customer.scss';
+@import 'main-customer.scss';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 * {
     margin: 0;
@@ -26,13 +34,6 @@ body {
     flex-direction: row;
 }
 
-.navBar-admin {
-    display: flex;
-    flex-direction: column;
-    min-width: 240px;
-    height: 100vh;
-    background-color: rgb(23, 24, 26);
-}
 
 .mainContent-admin {
     width: 100%;
@@ -42,4 +43,13 @@ body {
 .nostyle-links {
     list-style-type: none;
     text-decoration: none;
+}
+
+.info-card {
+    width: 100%;
+    max-width: 1024px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 2px;
 }

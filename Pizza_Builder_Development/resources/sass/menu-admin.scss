@@ -1,7 +1,11 @@
 .menu-admin {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 240px;
+    height: 100vh;
     text-align: center;
     color: white;
+    background-color: rgb(23, 24, 26);
 
     &__item {
         padding: 1rem;
