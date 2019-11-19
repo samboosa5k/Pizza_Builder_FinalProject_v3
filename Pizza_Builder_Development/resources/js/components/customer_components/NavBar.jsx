@@ -20,6 +20,10 @@ const NavBar = ( { match } ) => {
                         <Link to='/magic/checkout'>Checkout</Link>
                     </li>
 
+                    <li id="receipt" className="menu-admin__item">
+                        <Link to='/magic/receipt'>Receipt</Link>
+                    </li>
+
                     <li id="login" className="menu-admin__item">
                         <a href="/login">Login</a>
                     </li>
