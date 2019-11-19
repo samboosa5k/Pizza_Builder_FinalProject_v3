@@ -6,6 +6,7 @@
     text-align: center;
     color: white;
     background-color: rgb(31, 32, 32);
+    border-right: 1px dashed silver;
 
     &__top {
         display: flex;
@@ -27,6 +28,7 @@
         padding: 1rem;
         //background-color: rgb(52, 52, 63);
         color: white;
+        border-bottom: 2px solid black;
         font-size: 1.5rem;
         text-shadow: 1px 1px 1px black;
         text-align: center;

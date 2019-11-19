@@ -39,11 +39,15 @@ class App extends React.Component {
                         )} />
 
                         {/* CUSTOMER ROUTES */}
-                        <Route path='/magic' render={( routeProps ) => (
+                        <Route path='/home' render={( routeProps ) => (
                             <Home {...routeProps} />
                         )} />
 
-                        <Route path='/home' render={( routeProps ) => (
+                        <Route path='/about' render={( routeProps ) => (
+                            <Home {...routeProps} />
+                        )} />
+
+                        <Route path='/magic' render={( routeProps ) => (
                             <Home {...routeProps} />
                         )} />
 
