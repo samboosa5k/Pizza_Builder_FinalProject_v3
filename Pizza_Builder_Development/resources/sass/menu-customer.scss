@@ -1,27 +1,42 @@
 .menu-customer {
     display: flex;
     flex-direction: column;
-    min-width: 240px;
-    height: 100vh;
+    min-width: 256px;
+    //height: 100%;
     text-align: center;
     color: white;
     background-color: rgb(31, 32, 32);
+    border-right: 1px dashed silver;
 
-    &__block {
-        margin-top: auto;
-        margin-bottom: auto;
+    &__top {
+        display: flex;
+        flex-grow: 0;
+        justify-content: center;
+        align-items: center;
+        min-width: 256px;
+        min-height: 256px;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
     }
 
     &__item {
         padding: 1rem;
-        background-color: rgb(52, 52, 63);
+        //background-color: rgb(52, 52, 63);
         color: white;
-        font-size: 2rem;
+        border-bottom: 2px solid black;
+        font-size: 1.5rem;
         text-shadow: 1px 1px 1px black;
         text-align: center;
         list-style-type: none;
+        text-decoration: none;
 
         &--active {
+            background-color: rgba(0, 0, 0, 0.5);
             border-bottom: 3px solid rgb(129, 250, 129);
         }
 
@@ -29,5 +44,10 @@
             color: white;
             text-decoration: none;
         }
+    }
+
+    &__logo {
+        width: 128px;
+        height: auto;
     }
 }

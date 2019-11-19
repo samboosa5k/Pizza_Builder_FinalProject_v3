@@ -20,6 +20,10 @@ Route::get('/home', function () {
     return view('index');
 });
 
+Route::get('/about', function () {
+    return view('index');
+});
+
 Route::get('/magic', function () {
     return view('index');
 });
