@@ -1,14 +1,17 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import MenuLogo from './MenuLogo.jsx';
 import CornerCredits from '../general_components/CornerCredits.jsx';
 
-const NavBar = ( { match } ) => {
+const NavBar = ( props ) => {
+    const visibility = ( props.visibleOrNot ) ? "visible" : "hidden";
+
     return (
         <>
-            <div className="menu-customer">
-                <div className="menu-customer__top">
-                    <img src="image/pizza_logo.svg" className="menu-customer__logo" alt="jaj-team-logo" />
-                </div>
+            <div className="menu-customer" style={{ visibility: visibility }}>
+
+                <MenuLogo />
+
                 <div className="menu-customer__menu">
 
                     <NavLink
@@ -24,12 +27,17 @@ const NavBar = ( { match } ) => {
                     <NavLink
                         className="menu-customer__item"
                         activeClassName="menu-customer__item--active"
+                        to="/checkout">Checkout (test)</NavLink>
+
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
                         to='/about'>About</NavLink>
 
                     <NavLink
                         className="menu-customer__item"
                         activeClassName="menu-customer__item--active"
-                        to='/magic/contact'>Contact</NavLink>
+                        to='/contact'>Contact</NavLink>
 
                 </div>
                 <div className="menu-customer__bottom">

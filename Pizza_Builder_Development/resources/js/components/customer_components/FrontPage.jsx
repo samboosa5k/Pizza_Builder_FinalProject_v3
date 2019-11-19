@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const FrontPage = ( props ) => {
+    useEffect( () => {
+        props.setMenuVisibility( true );
+    }, [] );
+
     return (
         <>
+            <Redirect to='/home' />
             <h1 className="splash-header">It's pizza time, baby!</h1>
             <div className="info-card">
                 <div style={{ width: "100%", textAlign: "center" }}>

@@ -26,9 +26,10 @@ class BurgerBuilder extends Component {
                 meat: 0
             },
             ingredientsList: [],
+            ingredientsIds: [],
             totalPrice: 4, //base price
             purchasable: false,
-            purchasing: false
+            purchasing: true
         }
         this.updatePurchaseState = this.updatePurchaseState.bind( this );
         this.addIngredientHandler = this.addIngredientHandler.bind( this );
@@ -43,18 +44,39 @@ class BurgerBuilder extends Component {
             const response = await fetch( '/api/ingredients' );
             const data = await response.json();
 
-            const theObject = {};
-            const theArray = [];
+            let api_ingredientPrices = '';
+            const api_ingredientNames = {};
+
+            const interface_ingredients = [];
 
             for ( let key in data ) {
-                theObject[data[key].category] = 0;
-                theArray.push( {
-                    label: data[key].name, type: data[key].category
+                //  (Below) dynamically fill state with list of ingredient prices
+                api_ingredientPrices = data[key].unit_price;
+                //  (Below) dynamically fill state with list of ingredients
+                api_ingredientNames[data[key].name] = 0;
+
+
+                //  (Below) dynamically fill state with ingredient->ingredient-type key->value pairs
+                interface_ingredients.push( {
+                    label: data[key].name,
+                    type: data[key].name,
+                    id: data[key].id
                 } );
             }
-            this.setState( { ingredients: theObject, ingredientsList: theArray } );
+            this.setState(
+                {
+                    /*
+                        Dear Jayne, I apologize for the mess...
+                        We might have to refactor this later
+                    */
+                    ingredients: api_ingredientNames,
+                    ingredientsList: interface_ingredients,
+                    // ingredientsIds: api_ingredientIds,
+                    INGREDIENT_PRICES: api_ingredientPrices
+                } );
         }
         doFetch();
+        this.props.setMenuVisibility( false );
     }
 
     updatePurchaseState( ingredients ) {
@@ -69,20 +91,29 @@ class BurgerBuilder extends Component {
         this.setState( { purchasable: sum > 0 } );
     }
 
-    addIngredientHandler( type ) {
-        const oldCount = this.state.ingredients[type];
-        console.log( 'oldcount value', this.state.ingredients[type] );
-        const updatedCount = oldCount + 1;
+    addIngredientHandler( type, id ) {
+        const oldCount = this.state.ingredients[type];  // Control count of added ingredients
+        const updatedCount = oldCount + 1;  // Update the count
         const updatedIngredients = {
             ...this.state.ingredients
         };
-        updatedIngredients[type] = updatedCount;
+        updatedIngredients[type] = updatedCount;    // Update the currently chosen ingredients
 
-        const priceAddition = INGREDIENT_PRICES[type];
+        const ingredientIdArray = [...this.state.ingredientsIds];
+        ingredientIdArray.push( id );
+
+        const priceAddition = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
 
-        this.setState( { totalPrice: newPrice, ingredients: updatedIngredients } );
+        //  This is where the state is set
+        this.setState(
+            {
+                totalPrice: newPrice,
+                ingredients: updatedIngredients,
+                ingredientsIds: ingredientIdArray
+            } );
+
         this.updatePurchaseState( updatedIngredients );
     }
 
@@ -96,7 +127,7 @@ class BurgerBuilder extends Component {
             ...this.state.ingredients
         };
         updatedIngredients[type] = updatedCount;
-        const priceDeduction = INGREDIENT_PRICES[type];
+        const priceDeduction = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
         this.setState( { totalPrice: newPrice, ingredients: updatedIngredients } );
