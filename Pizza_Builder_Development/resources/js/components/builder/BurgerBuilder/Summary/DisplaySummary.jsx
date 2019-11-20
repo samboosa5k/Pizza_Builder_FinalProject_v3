@@ -5,9 +5,11 @@ import Button from './Button.jsx';
 import './button.css';
 
 const orderSummary = ( props ) => {
+    const sendToCheckout = [];
     const ingredientSummary = Object.keys( props.ingredients )
         .map( igKey => {
             if ( props.ingredients[igKey] >= 1 ) {
+                sendToCheckout.push( [[igKey], props.ingredients[igKey]] );
                 return (
                     <li key={igKey}>
                         <span style={{ textTransform: 'capitalize' }}>{igKey}</span>: {props.ingredients[igKey]}
@@ -15,6 +17,10 @@ const orderSummary = ( props ) => {
                 );
             }
         } );
+
+    const collectSummaryForParent = () => {
+        props.purchaseContinued( sendToCheckout );
+    }
 
 
     return (
@@ -28,7 +34,7 @@ const orderSummary = ( props ) => {
 
 
             {/* <Button className="Danger" clicked={props.purchaseCancelled}>CANCEL</Button> */}
-            <Button className="OrderButton" clicked={props.purchaseContinued}>Checkout!</Button>
+            <Button className="OrderButton" clicked={collectSummaryForParent}>Checkout!</Button>
         </div>
     )
 };

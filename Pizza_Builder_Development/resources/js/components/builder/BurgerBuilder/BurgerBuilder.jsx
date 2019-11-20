@@ -27,6 +27,7 @@ class BurgerBuilder extends Component {
             },
             ingredientsList: [],
             ingredientsIds: [],
+            orderSummary: [],
             totalPrice: 4, //base price
             purchasable: false,
             purchasing: true
@@ -71,7 +72,6 @@ class BurgerBuilder extends Component {
                     */
                     ingredients: api_ingredientNames,
                     ingredientsList: interface_ingredients,
-                    // ingredientsIds: api_ingredientIds,
                     INGREDIENT_PRICES: api_ingredientPrices
                 } );
         }
@@ -117,7 +117,7 @@ class BurgerBuilder extends Component {
         this.updatePurchaseState( updatedIngredients );
     }
 
-    removeIngredientHandler( type ) {
+    removeIngredientHandler( type, id ) {
         const oldCount = this.state.ingredients[type];
         if ( oldCount <= 0 ) {
             return;
@@ -127,12 +127,20 @@ class BurgerBuilder extends Component {
             ...this.state.ingredients
         };
         updatedIngredients[type] = updatedCount;
+
+        const ingredientIdArray = [...this.state.ingredientsIds];
+        ingredientIdArray.splice( ingredientIdArray.indexOf( id ), 1 );
+
         const priceDeduction = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
-        this.setState( { totalPrice: newPrice, ingredients: updatedIngredients } );
+        this.setState(
+            {
+                totalPrice: newPrice,
+                ingredients: updatedIngredients,
+                ingredientsIds: ingredientIdArray
+            } );
         this.updatePurchaseState( updatedIngredients );
-
     }
 
     purchaseHandler() {
@@ -143,9 +151,22 @@ class BurgerBuilder extends Component {
         this.setState( { purchasing: false } );
     }
 
-    purchaseContinueHandler() {
-        // alert( 'You continue!' );
-        this.props.submitOrderIngredients( this.state.ingredients );
+    purchaseContinueHandler( collectedSummary ) {
+        /*
+            Collecting order summary after clicking on ORDER
+            Formatting is important because this will go to checkout form
+        */
+
+        this.props.submitOrderIngredients( {
+            "item": {
+                "type": "pizza",
+                "ingredient_names": collectedSummary,
+                "ingredient_ids": [...this.state.ingredientsIds],
+            }
+        } );
+
+        this.props.setMenuVisibility( true );
+        this.props.history.push( '/checkout' );
     }
 
     render() {
