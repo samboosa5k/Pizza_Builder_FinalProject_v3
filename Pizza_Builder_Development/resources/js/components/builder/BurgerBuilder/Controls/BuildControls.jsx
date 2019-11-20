@@ -3,6 +3,7 @@ import React from 'react';
 import './buildcontrols.css';
 import BuildControl from './BuildControl.jsx';
 
+import MenuLogo from '../../../customer_components/MenuLogo.jsx';
 
 const controls = [
     { label: 'Salad', type: 'salad' },
@@ -13,24 +14,23 @@ const controls = [
 ];
 
 const buildControls = ( props ) => {
-    /*  console.log( 'Buildcontrols', props.ingredientsList );
-     console.log( 'Buildcontrols', controls ); */
     return (
-        <div className="BuildControls">
+        <div className="menu-customer__item BuildControls">
+            <MenuLogo />
             <p>Current Price: <strong>{props.price.toFixed( 2 )}</strong></p>
             {
                 props.ingredientsList.map( ctrl => (
                     <BuildControl
                         key={ctrl.label}
                         label={ctrl.label}
-                        added={() => props.ingredientAdded( ctrl.type )}
-                        /*removed={() => props.ingredientRemoved( ctrl.type )} */
+                        added={() => props.ingredientAdded( ctrl.type, ctrl.id )}
+                        removed={() => props.ingredientRemoved( ctrl.type, ctrl.id )}
                         disabled={props.disabled[ctrl.type]} />
                 ) )
             }
-            <button className="OrderButton"
+            {/* <button className="OrderButton"
                 disabled={!props.purchasable}
-                onClick={props.ordered}>ORDER NOW</button>
+                onClick={props.ordered}>ORDER NOW</button> */}
         </div>
     )
 };

@@ -2,20 +2,19 @@ import React from 'react';
 
 import './modal.css';
 // import Aux from '../../../hoc/Aux.jsx';
-import Backdrop from './Backdrop.jsx';
+// import Backdrop from './Backdrop.jsx';
 
-const modal = (props) => (
-    <div>
-        <Backdrop show={props.show} clicked={props.modalClosed}/>
-        <div 
+const modal = ( props ) => (
+
+    <div
         className="Modal"
         style={{
             transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
             opacity: props.show ? '1' : '0'
         }}>
-            {props.children}
-        </div>
+        {props.children}
     </div>
+
 );
 
 export default modal;

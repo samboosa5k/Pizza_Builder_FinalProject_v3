@@ -1,15 +1,17 @@
 import React from "react"
 
-function OrderSummary(props) {
-    const {ingredientProps} = props;
+function OrderSummary( props ) {
+    const { orderIngredients } = props;
 
     // let newPizza = 'Loading...';
-    console.log(ingredientProps)
+    console.log( orderIngredients.item.ingredient_names )
 
-    
     //use for mapping through an object
-    let newPizza = [];
-    for (let key in ingredientProps) {
+    let newPizza = orderIngredients.item.ingredient_names.map( ( elem, index ) => {
+        return <li key={index}>{elem[0]}: {elem[1]}</li>
+    } );
+
+    /* for (let key in ingredientProps) {
         let pizza = ingredientProps[key];
         newPizza.push(
             <div>
@@ -21,14 +23,13 @@ function OrderSummary(props) {
                 </ul>
             </div>
         )
-    }
-
+    } */
 
     return (
         <div className="pizzaCard">
-        <div>
-            <h2>Your Order</h2>
-                {newPizza}        
+            <div>
+                <h2>Your Pizza:</h2>
+                {newPizza}
             </div>
         </div>
     )
