@@ -10,7 +10,6 @@ class CheckoutExample extends React.Component {
             street_and_housenumber: '',
             postcode: '',
             city: '',
-            price: 10.25,
             csrf_token: '',
             checkout_object: ''
         }
@@ -24,19 +23,40 @@ class CheckoutExample extends React.Component {
 
     handleSubmit( event ) {
         event.preventDefault();
+        /*
+                this.setState( {
+                    checkout_object: {
+                        "first_name": this.state.first_name,
+                        "last_name": this.state.last_name,
+                        "phone_number": this.state.phone_number,
+                        "street_and_number": this.state.street_and_housenumber,
+                        "postcode": this.state.postcode,
+                        "city": this.state.city,
+                        "order": this.props.orderIngredients
+                    }
+                } ) */
 
-        this.setState( {
-            checkout_object: {
-                "first_name": this.state.first_name,
-                "last_name": this.state.last_name,
-                "phone_number": this.state.phone_number,
-                "street_and_number": this.state.street_and_housenumber,
-                "postcode": this.state.postcode,
-                "city": this.state.city,
-                "price": "make algorith, jasper",
-                "order": this.props.ingredientProps
-            }
+        fetch( '/order/finalize', {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': this.state.csrf_token
+            },
+            body: JSON.stringify( {
+                'first_name': this.state.first_name,
+                'last_name': this.state.last_name,
+                'phone_number': this.state.phone_number,
+                'street_and_housenumber': this.state.street_and_housenumber,
+                'postcode': this.state.postcode,
+                'city': this.state.city,
+                'order': this.props.orderIngredients
+            } )
         } )
+            .then( response => response.json() )
+            .then( data => {
+                console.log( data );
+            } )
     }
 
     handleChange( event ) {

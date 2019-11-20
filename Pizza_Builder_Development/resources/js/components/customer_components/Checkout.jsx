@@ -13,7 +13,7 @@ function Checkout( props ) {
 
             <div className="orderSummary">
                 <OrderSummary orderIngredients={orderIngredients} />
-                <CheckoutExample />
+                <CheckoutExample orderIngredients={orderIngredients} />
             </div>
         </div>
     )

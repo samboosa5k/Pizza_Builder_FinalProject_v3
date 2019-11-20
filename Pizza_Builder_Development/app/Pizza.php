@@ -9,6 +9,7 @@ class Pizza extends Model
     protected $primaryKey = 'user_id';
     protected $fillable = ['user_id', 'pizza_id', 'order_id'];
     public $incrementing = false;
+    public $timestamps = false;
 
     public function user()
     {
