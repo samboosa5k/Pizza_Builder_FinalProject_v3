@@ -1,21 +1,22 @@
-import React from "react"
+import React from "react";
 
-import Header from "./checkout_components/Header.jsx"
-import OrderSummary from "./checkout_components/OrderSummary.jsx"
-import CheckoutExample from "./CheckoutExample.jsx"
+import OrderSummary from "./checkout_components/OrderSummary.jsx";
+import CheckoutExample from "./CheckoutExample.jsx";
 
-function Checkout(props) {
-    const {ingredientProps} = props;
+function Checkout( props ) {
+    // const { ingredientProps } = props;
+    const { orderIngredients } = props;
 
     return (
         <div>
-            <Header />
+            <h1 className="splash-header">Checkout :D</h1>
+
             <div className="orderSummary">
-            <OrderSummary ingredientProps={ingredientProps}/>
-            <CheckoutExample />
+                <OrderSummary orderIngredients={orderIngredients} />
+                <CheckoutExample />
             </div>
         </div>
     )
 }
 
-export default Checkout
+export default Checkout;

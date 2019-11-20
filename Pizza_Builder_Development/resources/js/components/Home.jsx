@@ -48,7 +48,10 @@ const Home = ( { match } ) => {
                     )} />
 
                     <Route exact path='/checkout' render={( routeProps ) => (
-                        <CheckoutExample {...routeProps} ingredientProps={ingredientProps} />
+                        <Checkout {...routeProps}
+                            ingredientProps={ingredientProps}
+                            orderIngredients={orderIngredients}
+                        />
                     )} />
 
                     <Route exact path='/about' render={( routeProps ) => (
