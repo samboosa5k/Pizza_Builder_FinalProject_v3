@@ -19,7 +19,7 @@ const orderSummary = ( props ) => {
         } );
 
     const collectSummaryForParent = () => {
-        props.purchaseContinued( sendToCheckout );
+        props.purchaseContinued( sendToCheckout, props.price.toFixed( 2 ) );
     }
 
 

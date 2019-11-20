@@ -151,7 +151,7 @@ class BurgerBuilder extends Component {
         this.setState( { purchasing: false } );
     }
 
-    purchaseContinueHandler( collectedSummary ) {
+    purchaseContinueHandler( collectedSummary, price ) {
         /*
             Collecting order summary after clicking on ORDER
             Formatting is important because this will go to checkout form
@@ -162,6 +162,7 @@ class BurgerBuilder extends Component {
                 "type": "pizza",
                 "ingredient_names": collectedSummary,
                 "ingredient_ids": [...this.state.ingredientsIds],
+                "price": price
             }
         } );
 

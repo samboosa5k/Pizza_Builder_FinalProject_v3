@@ -30,6 +30,7 @@ function OrderSummary( props ) {
             <div>
                 <h2>Your Pizza:</h2>
                 {newPizza}
+                <p>&euro; {orderIngredients.item.price}</p>
             </div>
         </div>
     )
