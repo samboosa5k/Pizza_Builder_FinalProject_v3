@@ -105,15 +105,17 @@ class BurgerBuilder extends Component {
         // Update the currently chosen ingredients
         updatedIngredients[type] = updatedCount;
 
-        const ingredientIdArray = [...this.state.ingredientsIds];
-        ingredientIdArray.push( id );
-
         const priceAddition = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
 
-        //  UPdate ordersummary
 
+
+        //  Update order summary
+        const ingredientIdArray = [...this.state.ingredientsIds];
+        ingredientIdArray.push( id );
+
+        // Update to improve adding & removing ingredients
         const pizzaIngredientsOrderArray = [...this.state.pizzaIngredientsOrder];
         pizzaIngredientsOrderArray.push( type );
 
@@ -130,28 +132,43 @@ class BurgerBuilder extends Component {
     }
 
     removeIngredientHandler( type, id ) {
+        //  Control count of removed ingredients
         const oldCount = this.state.ingredients[type];
         if ( oldCount <= 0 ) {
             return;
         }
+
+        //  Do subtraction and change count
         const updatedCount = oldCount - 1;
         const updatedIngredients = {
             ...this.state.ingredients
         };
         updatedIngredients[type] = updatedCount;
 
+        //  Update array of ingredient id's, used for receipt
         const ingredientIdArray = [...this.state.ingredientsIds];
         ingredientIdArray.splice( ingredientIdArray.indexOf( id ), 1 );
 
+        //  Calculate price deduction
         const priceDeduction = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
+
+        //  UPdate ordersummary
+        const pizzaIngredientsOrderArray = [...this.state.pizzaIngredientsOrder];
+        pizzaIngredientsOrderArray.splice( pizzaIngredientsOrderArray.indexOf( type ), 1 );
+
+        console.log( 'ingredient index', pizzaIngredientsOrderArray );
+
+        //  This is where the state is set
         this.setState(
             {
                 totalPrice: newPrice,
                 ingredients: updatedIngredients,
-                ingredientsIds: ingredientIdArray
+                ingredientsIds: ingredientIdArray,
+                pizzaIngredientsOrder: pizzaIngredientsOrderArray
             } );
+
         this.updatePurchaseState( updatedIngredients );
     }
 
