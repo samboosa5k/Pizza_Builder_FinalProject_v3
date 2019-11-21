@@ -27,6 +27,7 @@ class BurgerBuilder extends Component {
             },
             ingredientsList: [],
             ingredientsIds: [],
+            pizzaIngredientsOrder: ['Crust'],
             orderSummary: [],
             totalPrice: 4, //base price
             purchasable: false,
@@ -92,12 +93,17 @@ class BurgerBuilder extends Component {
     }
 
     addIngredientHandler( type, id ) {
-        const oldCount = this.state.ingredients[type];  // Control count of added ingredients
+        // Control count of added ingredients
+        const oldCount = this.state.ingredients[type];
+
+        // Update the count
         const updatedCount = oldCount + 1;  // Update the count
         const updatedIngredients = {
             ...this.state.ingredients
         };
-        updatedIngredients[type] = updatedCount;    // Update the currently chosen ingredients
+
+        // Update the currently chosen ingredients
+        updatedIngredients[type] = updatedCount;
 
         const ingredientIdArray = [...this.state.ingredientsIds];
         ingredientIdArray.push( id );
@@ -106,12 +112,18 @@ class BurgerBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
 
+        //  UPdate ordersummary
+
+        const pizzaIngredientsOrderArray = [...this.state.pizzaIngredientsOrder];
+        pizzaIngredientsOrderArray.push( type );
+
         //  This is where the state is set
         this.setState(
             {
                 totalPrice: newPrice,
                 ingredients: updatedIngredients,
-                ingredientsIds: ingredientIdArray
+                ingredientsIds: ingredientIdArray,
+                pizzaIngredientsOrder: pizzaIngredientsOrderArray
             } );
 
         this.updatePurchaseState( updatedIngredients );
@@ -189,7 +201,12 @@ class BurgerBuilder extends Component {
                             purchaseCancelled={this.purchaseCancelHandler}
                             purchaseContinued={this.purchaseContinueHandler} />
                     </Modal>
-                    <Burger ingredients={this.state.ingredients} />
+
+                    <Burger
+                        ingredients={this.state.ingredients}
+                        pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
+                    />
+
                     <BuildControls
                         ingredientsList={this.state.ingredientsList}
                         ingredientAdded={this.addIngredientHandler}

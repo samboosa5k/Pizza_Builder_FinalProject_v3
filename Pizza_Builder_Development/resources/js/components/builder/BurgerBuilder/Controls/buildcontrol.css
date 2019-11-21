@@ -3,6 +3,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
+    width: 100%;
+}
+
+.BuildControl-MoreOrLess {
+    display: flex;
+    flex-direction: row;
 }
 
 .BuildControl button {
