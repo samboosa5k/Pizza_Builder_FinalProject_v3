@@ -109,8 +109,6 @@ class BurgerBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
 
-
-
         //  Update order summary
         const ingredientIdArray = [...this.state.ingredientsIds];
         ingredientIdArray.push( id );
@@ -157,8 +155,6 @@ class BurgerBuilder extends Component {
         //  UPdate ordersummary
         const pizzaIngredientsOrderArray = [...this.state.pizzaIngredientsOrder];
         pizzaIngredientsOrderArray.splice( pizzaIngredientsOrderArray.indexOf( type ), 1 );
-
-        console.log( 'ingredient index', pizzaIngredientsOrderArray );
 
         //  This is where the state is set
         this.setState(

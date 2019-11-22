@@ -36,10 +36,24 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $order = Order::where('id', $id)->with('pizzas')->get();
-        //$order = Order::where('orders.id', $id)->with('pizzas')->with('ingredients')->get();
+        /* $order = Order::where('id', $id)->with('pizzas')->get(); */
 
-        return $order;
+        $order = Order::where('id', $id);   // GET orders with status in_progress
+
+        $order = $order->get();
+        $orderids = $order->pluck('id'); //    Now we have all order ids, we need pizza-ids
+
+        $pizza_ids = Pizza::whereIn('order_id', $orderids)->pluck('pizza_id');  //  Get ingredients only of in_progress pizzas
+
+        $in_progress_ingredients = PizzaIngredient::leftJoin('pizza_order_ingredients', 'pizza_ingredients.id', '=', 'pizza_order_ingredients.ingredient_id')
+            ->leftJoin('pizzas', 'pizza_order_ingredients.pizza_id', '=', 'pizzas.pizza_id')
+            ->whereIn('pizzas.pizza_id', $pizza_ids)
+            ->get(); //  Get ingredients only of in_progress pizzas
+
+        return [
+            'orders' => $order,
+            'items' => $in_progress_ingredients,
+        ];
     }
 
     public function store(Request $request)
