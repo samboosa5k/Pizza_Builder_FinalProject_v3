@@ -23,18 +23,6 @@ class CheckoutExample extends React.Component {
 
     handleSubmit( event ) {
         event.preventDefault();
-        /*
-                this.setState( {
-                    checkout_object: {
-                        "first_name": this.state.first_name,
-                        "last_name": this.state.last_name,
-                        "phone_number": this.state.phone_number,
-                        "street_and_number": this.state.street_and_housenumber,
-                        "postcode": this.state.postcode,
-                        "city": this.state.city,
-                        "order": this.props.orderIngredients
-                    }
-                } ) */
 
         fetch( '/order/finalize', {
             method: 'POST',
@@ -55,8 +43,9 @@ class CheckoutExample extends React.Component {
         } )
             .then( response => response.json() )
             .then( data => {
-                console.log( data );
+                this.props.setOrderId( data.order_id );
             } )
+        this.props.history.push( '/magic/receipt-example' );
     }
 
     handleChange( event ) {

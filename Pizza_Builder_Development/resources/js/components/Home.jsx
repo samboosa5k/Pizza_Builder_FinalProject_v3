@@ -8,6 +8,7 @@ import FrontPage from './customer_components/FrontPage.jsx';
 import Checkout from './customer_components/Checkout.jsx';
 import CheckoutExample from './customer_components/CheckoutExample.jsx';
 import Receipt from './customer_components/Receipt.jsx';
+import ReceiptExample from './customer_components/ReceiptExample.jsx';
 import About from './customer_components/About.jsx';
 import Contact from './customer_components/Contact.jsx';
 
@@ -27,6 +28,7 @@ const Home = ( { match } ) => {
     } );
 
     const [orderIngredients, setOrderIngredients] = useState( {} );
+    const [orderId, setOrderId] = useState( 0 );
 
     return (
         <>
@@ -51,6 +53,7 @@ const Home = ( { match } ) => {
                         <Checkout {...routeProps}
                             ingredientProps={ingredientProps}
                             orderIngredients={orderIngredients}
+                            setOrderId={setOrderId}
                         />
                     )} />
 
@@ -63,7 +66,13 @@ const Home = ( { match } ) => {
                     )} />
 
                     <Route exact path='/receipt' render={( routeProps ) => (
-                        <Receipt {...routeProps} ingredientProps={ingredientProps} />
+                        <ReceiptExample {...routeProps} ingredientProps={ingredientProps} />
+                    )} />
+
+                    <Route exact path='/magic/receipt-example' render={( routeProps ) => (
+                        <ReceiptExample {...routeProps} ingredientProps={ingredientProps}
+                            orderId={orderId}
+                        />
                     )} />
 
                 </div>

@@ -97,6 +97,6 @@ class OrderController extends Controller
 
         PizzaOrderIngredient::insert($ingredients_insert);
 
-        return $request->first_name;
+        return ['order_id' => $newOrderId]; //  Return new order id
     }
 }

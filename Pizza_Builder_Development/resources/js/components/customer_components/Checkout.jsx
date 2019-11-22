@@ -3,7 +3,7 @@ import React from "react";
 import OrderSummary from "./checkout_components/OrderSummary.jsx";
 import CheckoutExample from "./CheckoutExample.jsx";
 
-function Checkout( props ) {
+const Checkout = ( props ) => {
     // const { ingredientProps } = props;
     const { orderIngredients } = props;
 
@@ -13,7 +13,11 @@ function Checkout( props ) {
 
             <div className="orderSummary">
                 <OrderSummary orderIngredients={orderIngredients} />
-                <CheckoutExample orderIngredients={orderIngredients} />
+                <CheckoutExample
+                    history={props.history}
+                    orderIngredients={orderIngredients}
+                    setOrderId={props.setOrderId}
+                />
             </div>
         </div>
     )
