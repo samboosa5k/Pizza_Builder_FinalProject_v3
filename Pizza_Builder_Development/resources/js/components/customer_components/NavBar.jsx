@@ -39,6 +39,11 @@ const NavBar = ( props ) => {
                         activeClassName="menu-customer__item--active"
                         to='/contact'>Contact</NavLink>
 
+<NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to='/receipt'>Receipt</NavLink>
+
                 </div>
                 <div className="menu-customer__bottom">
                     <CornerCredits />

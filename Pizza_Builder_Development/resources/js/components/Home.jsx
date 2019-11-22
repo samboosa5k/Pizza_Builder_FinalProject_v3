@@ -62,7 +62,7 @@ const Home = ( { match } ) => {
                         <Contact {...routeProps} />
                     )} />
 
-                    <Route exact path='/magic/receipt' render={( routeProps ) => (
+                    <Route exact path='/receipt' render={( routeProps ) => (
                         <Receipt {...routeProps} ingredientProps={ingredientProps} />
                     )} />
 
