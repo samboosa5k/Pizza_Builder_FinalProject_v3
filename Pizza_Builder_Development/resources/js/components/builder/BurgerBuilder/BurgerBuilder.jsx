@@ -27,6 +27,7 @@ class BurgerBuilder extends Component {
             },
             ingredientsList: [],
             ingredientsIds: [],
+            pizzaIngredientsOrder: ['Crust'],
             orderSummary: [],
             totalPrice: 4, //base price
             purchasable: false,
@@ -92,54 +93,78 @@ class BurgerBuilder extends Component {
     }
 
     addIngredientHandler( type, id ) {
-        const oldCount = this.state.ingredients[type];  // Control count of added ingredients
+        // Control count of added ingredients
+        const oldCount = this.state.ingredients[type];
+
+        // Update the count
         const updatedCount = oldCount + 1;  // Update the count
         const updatedIngredients = {
             ...this.state.ingredients
         };
-        updatedIngredients[type] = updatedCount;    // Update the currently chosen ingredients
 
-        const ingredientIdArray = [...this.state.ingredientsIds];
-        ingredientIdArray.push( id );
+        // Update the currently chosen ingredients
+        updatedIngredients[type] = updatedCount;
 
         const priceAddition = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
+
+        //  Update order summary
+        const ingredientIdArray = [...this.state.ingredientsIds];
+        ingredientIdArray.push( id );
+
+        // Update to improve adding & removing ingredients
+        const pizzaIngredientsOrderArray = [...this.state.pizzaIngredientsOrder];
+        pizzaIngredientsOrderArray.push( type );
 
         //  This is where the state is set
         this.setState(
             {
                 totalPrice: newPrice,
                 ingredients: updatedIngredients,
-                ingredientsIds: ingredientIdArray
+                ingredientsIds: ingredientIdArray,
+                pizzaIngredientsOrder: pizzaIngredientsOrderArray
             } );
 
         this.updatePurchaseState( updatedIngredients );
     }
 
     removeIngredientHandler( type, id ) {
+        //  Control count of removed ingredients
         const oldCount = this.state.ingredients[type];
         if ( oldCount <= 0 ) {
             return;
         }
+
+        //  Do subtraction and change count
         const updatedCount = oldCount - 1;
         const updatedIngredients = {
             ...this.state.ingredients
         };
         updatedIngredients[type] = updatedCount;
 
+        //  Update array of ingredient id's, used for receipt
         const ingredientIdArray = [...this.state.ingredientsIds];
         ingredientIdArray.splice( ingredientIdArray.indexOf( id ), 1 );
 
+        //  Calculate price deduction
         const priceDeduction = this.state.INGREDIENT_PRICES;
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
+
+        //  UPdate ordersummary
+        const pizzaIngredientsOrderArray = [...this.state.pizzaIngredientsOrder];
+        pizzaIngredientsOrderArray.splice( pizzaIngredientsOrderArray.indexOf( type ), 1 );
+
+        //  This is where the state is set
         this.setState(
             {
                 totalPrice: newPrice,
                 ingredients: updatedIngredients,
-                ingredientsIds: ingredientIdArray
+                ingredientsIds: ingredientIdArray,
+                pizzaIngredientsOrder: pizzaIngredientsOrderArray
             } );
+
         this.updatePurchaseState( updatedIngredients );
     }
 
@@ -189,7 +214,12 @@ class BurgerBuilder extends Component {
                             purchaseCancelled={this.purchaseCancelHandler}
                             purchaseContinued={this.purchaseContinueHandler} />
                     </Modal>
-                    <Burger ingredients={this.state.ingredients} />
+
+                    <Burger
+                        ingredients={this.state.ingredients}
+                        pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
+                    />
+
                     <BuildControls
                         ingredientsList={this.state.ingredientsList}
                         ingredientAdded={this.addIngredientHandler}

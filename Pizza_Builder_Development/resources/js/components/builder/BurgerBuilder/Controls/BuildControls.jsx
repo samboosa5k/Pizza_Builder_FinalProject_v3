@@ -5,14 +5,6 @@ import BuildControl from './BuildControl.jsx';
 
 import MenuLogo from '../../../customer_components/MenuLogo.jsx';
 
-const controls = [
-    { label: 'Salad', type: 'salad' },
-    { label: 'Bacon', type: 'bacon' },
-    { label: 'Cheese', type: 'cheese' },
-    { label: 'Meat', type: 'meat' },
-
-];
-
 const buildControls = ( props ) => {
     return (
         <div className="menu-customer__item BuildControls">
@@ -28,9 +20,6 @@ const buildControls = ( props ) => {
                         disabled={props.disabled[ctrl.type]} />
                 ) )
             }
-            {/* <button className="OrderButton"
-                disabled={!props.purchasable}
-                onClick={props.ordered}>ORDER NOW</button> */}
         </div>
     )
 };

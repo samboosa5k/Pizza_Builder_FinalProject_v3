@@ -12,6 +12,7 @@
 */
 
 //  REACT CUSTOMER routes
+
 Route::get('/', function () {
     return view('index');
 });

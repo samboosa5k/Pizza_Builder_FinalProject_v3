@@ -15,7 +15,7 @@ class Orders extends React.Component {
     }
 
     componentDidMount() {
-        fetch( 'http://127.0.0.1:8000/order/status/in_progress', {  // FETCH -> all 'in_progress' orders
+        fetch( '/order/status/in_progress', {  // FETCH -> all 'in_progress' orders
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + this.props.token,
