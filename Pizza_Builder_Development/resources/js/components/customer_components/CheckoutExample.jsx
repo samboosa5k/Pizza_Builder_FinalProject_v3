@@ -55,10 +55,12 @@ class CheckoutExample extends React.Component {
                         'X-CSRF-TOKEN': this.state.csrf_token
                     }
                 } )
+                    .then( this.props.setOrderId( data.order_id ) )
+                    .then( this.props.history.push( '/receipt' ) )
 
-                this.props.setOrderId( data.order_id );
+
             } )
-        this.props.history.push( '/magic/receipt-example' );
+
     }
 
     handleChange( event ) {

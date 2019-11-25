@@ -48,7 +48,7 @@ const NavBar = ( props ) => {
                 </div>
                 <div className="menu-customer__bottom">
                     <MenuLogo />
-                    <CornerCredits />
+                    {/* <CornerCredits /> */}
                 </div>
             </div>
 
