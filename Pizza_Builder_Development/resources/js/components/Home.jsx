@@ -66,7 +66,9 @@ const Home = ( { match } ) => {
                     )} />
 
                     <Route exact path='/receipt' render={( routeProps ) => (
-                        <Receipt {...routeProps} ingredientProps={ingredientProps} />
+                        <ErrorBoundary>
+                            <Receipt {...routeProps} ingredientProps={ingredientProps} orderId={orderId} />
+                        </ErrorBoundary>
                     )} />
 
                     <Route exact path='/magic/receipt-example' render={( routeProps ) => (
