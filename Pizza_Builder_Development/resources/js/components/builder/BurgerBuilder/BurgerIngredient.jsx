@@ -11,13 +11,14 @@ class BurgerIngredient extends Component {
     constructor( props ) {
         super( props );
         this.state = {
-            individualStateArray: []
+            currentIngredient: [],
         }
     }
 
-    componentDidMount() {
+
+
+    render() {
         let ingredient = null;
-        let individualArray = [];
 
         switch ( this.props.type ) {
             case ( 'Crust' ):
@@ -33,17 +34,10 @@ class BurgerIngredient extends Component {
                     </div>;
                 break;
             case ( 'Pepperoni' ):
-                //  Randomly generate position
-                for ( let i = 0; i < individualCount; i++ ) {
-                    individualArray.push( <img src="/image/pepperoni.svg" style={{
-                        transform: `translate( ${Math.floor( ( Math.random() * xLimit ) + 1 )}px, ${Math.floor( ( Math.random() * yLimit ) + 1 )}px )`
-                    }} alt="" /> );
-                }
-
                 //  Set initial placement values
                 ingredient =
                     <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
-                        {individualArray}
+                        <img src="/image/pepperoni.svg" alt="" />
                     </div>;
                 break;
             case ( 'bacon' ):
@@ -56,11 +50,7 @@ class BurgerIngredient extends Component {
                 ingredient = null;
         }
 
-        this.setState( { individualStateArray: ingredient } );
-    }
-
-    render() {
-        return this.state.individualStateArray;
+        return ingredient;
     }
 
 }

@@ -62,4 +62,4 @@ Route::get('order/{id}/', 'OrderController@show');      //  Show single order, n
 Route::post('order/finalize', 'OrderController@store');
 
 //  EMAIL
-Route::get('email', 'EmailController@index');
+Route::get('email/{id}', 'EmailController@index');

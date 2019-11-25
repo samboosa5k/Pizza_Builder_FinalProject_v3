@@ -77,6 +77,7 @@ class OrderController extends Controller
         //  Customer contact details
         $newOrder->first_name = $request->input('first_name');
         $newOrder->last_name = $request->input('last_name');
+        $newOrder->email = $request->input('email');
         $newOrder->phone_number = $request->input('phone_number');
         $newOrder->street_and_housenumber = $request->input('street_and_housenumber');
         $newOrder->postcode = $request->input('postcode');

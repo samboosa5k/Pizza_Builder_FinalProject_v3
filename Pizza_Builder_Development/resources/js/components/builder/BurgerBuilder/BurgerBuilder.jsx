@@ -19,12 +19,7 @@ class BurgerBuilder extends Component {
     constructor( props ) {
         super( props );
         this.state = {
-            ingredients: {
-                salad: 0,
-                bacon: 0,
-                cheese: 0,
-                meat: 0
-            },
+            ingredients: {},
             ingredientsList: [],
             ingredientsIds: [],
             pizzaIngredientsOrder: ['Crust'],
@@ -81,7 +76,6 @@ class BurgerBuilder extends Component {
     }
 
     updatePurchaseState( ingredients ) {
-
         const sum = Object.keys( ingredients )
             .map( igKey => {
                 return ingredients[igKey]
@@ -207,16 +201,17 @@ class BurgerBuilder extends Component {
         return (
             <ErrorBoundary>
                 <NewAux>
+
                     <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
                         <DisplaySummary
                             ingredients={this.state.ingredients}
                             price={this.state.totalPrice}
                             purchaseCancelled={this.purchaseCancelHandler}
-                            purchaseContinued={this.purchaseContinueHandler} />
+                            purchaseContinued={this.purchaseContinueHandler}
+                        />
                     </Modal>
 
                     <Burger
-                        ingredients={this.state.ingredients}
                         pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
                     />
 
@@ -227,7 +222,9 @@ class BurgerBuilder extends Component {
                         disabled={disabledInfo}
                         purchasable={this.state.purchasable}
                         ordered={this.purchaseHandler}
-                        price={this.state.totalPrice} />
+                        price={this.state.totalPrice}
+                    />
+
                 </NewAux>
             </ErrorBoundary>
         )

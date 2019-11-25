@@ -14,7 +14,18 @@
         justify-content: center;
         align-items: center;
         min-width: 256px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         // min-height: 128px;
+        border-bottom: 1px dashed coral;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-grow: 0;
+        justify-content: center;
+        align-items: center;
+        min-width: 256px;
     }
 
     &__menu {
@@ -22,18 +33,21 @@
         flex-direction: column;
         flex-grow: 1;
         height: 100%;
+
     }
 
     &__item {
         padding: 1rem;
+        margin-top: 0.25rem;
         //background-color: rgb(52, 52, 63);
         color: white;
-        border-bottom: 2px solid black;
-        font-size: 1rem;
+        border-bottom: 1px dashed coral;
+        font-size: 1.25rem;
         text-shadow: 1px 1px 1px black;
         text-align: center;
         list-style-type: none;
         text-decoration: none;
+        font-family: 'Poiret One', cursive;
 
         &--active {
             background-color: rgba(0, 0, 0, 0.5);
@@ -46,8 +60,16 @@
         }
     }
 
+    &__project-name {
+        color: white;
+        font-size: 2rem;
+        font-family: 'Pacifico', cursive;
+        text-shadow: 4px 4px 0 black;
+    }
+
     &__logo {
-        width: 128px;
+        width: 96px;
+        padding: 1rem;
         height: auto;
     }
 }

@@ -6,6 +6,7 @@ class CheckoutExample extends React.Component {
         this.state = {
             first_name: '',
             last_name: '',
+            email: '',
             phone_number: '',
             street_and_housenumber: '',
             postcode: '',
@@ -34,6 +35,7 @@ class CheckoutExample extends React.Component {
             body: JSON.stringify( {
                 'first_name': this.state.first_name,
                 'last_name': this.state.last_name,
+                'email': this.state.email,
                 'phone_number': this.state.phone_number,
                 'street_and_housenumber': this.state.street_and_housenumber,
                 'postcode': this.state.postcode,
@@ -43,6 +45,17 @@ class CheckoutExample extends React.Component {
         } )
             .then( response => response.json() )
             .then( data => {
+
+                //  Send email
+                fetch( '/email/' + data.order_id, {
+                    method: 'GET',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': this.state.csrf_token
+                    }
+                } )
+
                 this.props.setOrderId( data.order_id );
             } )
         this.props.history.push( '/magic/receipt-example' );
@@ -73,6 +86,9 @@ class CheckoutExample extends React.Component {
 
                         <label className="admin-login__label" htmlFor="last_name">Last Name:</label>
                         <input type="text" className="admin-login__input" id="last_name" name="last_name" onChange={this.handleChange} />
+
+                        <label className="admin-login__label" htmlFor="last_name">Email:</label>
+                        <input type="text" className="admin-login__input" id="email" name="email" onChange={this.handleChange} />
 
                         <label className="admin-login__label" htmlFor="phone_number">Phone:</label>
                         <input type="text" className="admin-login__input" id="phone_number" name="phone_number" onChange={this.handleChange} />

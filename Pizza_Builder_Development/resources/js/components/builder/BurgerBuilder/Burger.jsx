@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import "./Burger.css";
 import BurgerIngredient from './BurgerIngredient.jsx';
@@ -16,7 +16,7 @@ const burger = ( props ) => {
 
     }
 
-    console.log( transformerIngredients );
+    //  console.log( 'Burger.jsx', pizzaIngredientsOrder );
 
     return (
         <div className="Burger">

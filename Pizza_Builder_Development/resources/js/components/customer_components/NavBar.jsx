@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import ProjectName from './ProjectName.jsx';
 import MenuLogo from './MenuLogo.jsx';
 import CornerCredits from '../general_components/CornerCredits.jsx';
 
@@ -10,7 +11,7 @@ const NavBar = ( props ) => {
         <>
             <div className="menu-customer" style={{ visibility: visibility }}>
 
-                <MenuLogo />
+                <ProjectName />
 
                 <div className="menu-customer__menu">
 
@@ -39,13 +40,14 @@ const NavBar = ( props ) => {
                         activeClassName="menu-customer__item--active"
                         to='/contact'>Contact</NavLink>
 
-<NavLink
+                    <NavLink
                         className="menu-customer__item"
                         activeClassName="menu-customer__item--active"
                         to='/receipt'>Receipt</NavLink>
 
                 </div>
                 <div className="menu-customer__bottom">
+                    <MenuLogo />
                     <CornerCredits />
                 </div>
             </div>
