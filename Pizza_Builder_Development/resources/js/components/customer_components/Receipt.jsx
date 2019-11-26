@@ -20,18 +20,24 @@ class Receipt extends Component {
 
     render() {
         let content = 'Loading';
+
         if ( this.state.apiResponse ) {
             const items = this.state.apiResponse.items;
             let itemName = [];
             let itemPrice = [];
             let itemAmount = [];
 
-            console.log( 'items', items ); for ( let item in items ) {
+            console.log( 'items', items );
+
+            for ( let item in items ) {
                 if ( itemName.indexOf( items[item].name ) === -1 ) {
                     itemName.push( items[item].name );
+                    itemAmount.push( 1 );
+                } else if ( itemName.indexOf( items[item].name ) >= 0 ) {
+                    itemAmount[itemName.indexOf( items[item].name )] = itemAmount[itemName.indexOf( items[item].name )] + 1;
                 }
-
             }
+
             const orders = this.state.apiResponse.orders[0];
 
             content = (
@@ -47,9 +53,13 @@ class Receipt extends Component {
                     </div>
                     <p style={{ textAlign: 'left' }}>Your order:</p>
                     <div className="flex">
-                        {/* { for (let item in itemName )} */}
-                        <p>{itemAmount}</p>
-                        <ul>{itemName}</ul>
+                        <ul>
+                            {
+                                itemName.map( ( elem, index ) => {
+                                    return <li>{elem} x {itemAmount[index]}</li>
+                                } )
+                            }
+                        </ul>
                         <p>{itemPrice}</p>
                     </div>
                     <div className="flex">
