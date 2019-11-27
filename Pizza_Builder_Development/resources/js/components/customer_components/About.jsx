@@ -3,7 +3,7 @@ import React from 'react';
 const About = ( props ) => {
     return (
         <>
-            <h1 className="splash-header">About...</h1>
+            <h1 className="splash-header">About the Pizza Builders..</h1>
             <div className="info-card">
                 <div style={{ width: "100%", textAlign: "center" }}>
                     <h2>The Team</h2>
