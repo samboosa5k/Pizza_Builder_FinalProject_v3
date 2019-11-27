@@ -10,6 +10,7 @@ use App\PizzaOrderIngredient;
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\EmailController;
 
 class OrderController extends Controller
 {
@@ -99,5 +100,13 @@ class OrderController extends Controller
         PizzaOrderIngredient::insert($ingredients_insert);
 
         return ['order_id' => $newOrderId]; //  Return new order id
+    }
+
+    public function update(Request $request)
+    {
+        Order::where('id', $request->input('id'))->update(['status' => 'complete']);
+
+
+        return ['operation' => $request->input('operation'), 'id' => $request->input('id')];
     }
 }

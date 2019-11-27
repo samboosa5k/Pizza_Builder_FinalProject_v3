@@ -43,6 +43,12 @@ Route::get('/admin', function () {
     return view('index');
 });
 
+Route::get('/admin/{any}', function ($any) {
+    return view('index');
+});
+
+Route::put('/order/update', 'OrderController@update');
+
 
 //  Passport controller
 Route::group([
@@ -63,3 +69,4 @@ Route::post('order/finalize', 'OrderController@store');
 
 //  EMAIL
 Route::get('email/{id}', 'EmailController@index');
+Route::post('email/complete/', 'EmailController@complete');

@@ -10,11 +10,17 @@ class Orders extends React.Component {
             popContent: '',
             pop_id: '',
             pop_open: false,
+            csrf_token: ''
         }
         this.popDetails = this.popDetails.bind( this );
     }
 
     componentDidMount() {
+        //  Logging for debugging
+        console.log( 'Step 4', 'Orders.jsx reached' );
+        //  CSRF
+        this.setState( { csrf_token: document.getElementsByName( '_token' )[0].value } );
+        //  Initial fetch
         fetch( '/order/status/in_progress', {  // FETCH -> all 'in_progress' orders
             method: 'GET',
             headers: {
@@ -43,9 +49,52 @@ class Orders extends React.Component {
         this.setState( prevState => ( { pop_open: !prevState.pop_open, pop_id: id, popContent: details } ) );
     }
 
+    completeOrder( event, id ) {
+        console.log( 'Orders.jsx -> completeOrder', id );
+        fetch( '/order/update', {  // FETCH -> update
+            method: 'PUT',
+            headers: {
+                // 'Authorization': 'Bearer ' + this.props.token,
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': this.state.csrf_token
+            },
+            body: JSON.stringify( {
+                'id': id,
+                'operation': 'complete'
+            } )
+        } )
+            .then( response => response.json() )
+            .then( data => {
+                console.log( 'Orders.jsx -> server response', JSON.stringify( data ) );
+            } ).then(
+                fetch( '/email/complete/', {  // FETCH -> update
+                    method: 'POST',
+                    headers: {
+                        // 'Authorization': 'Bearer ' + this.props.token,
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': this.state.csrf_token
+                    },
+                    body: JSON.stringify( {
+                        'id': id,
+                    } )
+                } )
+                    .then( response => response.json() )
+                    .then( data => {
+                        console.log( 'Orders.jsx -> server response', JSON.stringify( data ) );
+                    } )
+            )
+
+
+    }
+
+    cancelOrder( event, id ) {
+        console.log( 'Orders.jsx -> cancelOrder', id );
+    }
+
     render() {
         let apiResponse = 'Loading...';
-
         let popContent = 'Loading...';
 
         if ( this.state.pop_open === true ) {
@@ -69,6 +118,8 @@ class Orders extends React.Component {
                     <hr />
                     <div className="orders-single__bottom-menu">
                         <a href="#" onClick={( event ) => { this.popDetails( event, elem.id ) }} className="orders-single__details-button nostyle-links">Order Details</a>
+                        <a href="#" onClick={( event ) => { this.completeOrder( event, elem.id ) }} className="orders-single__complete-button nostyle-links">Complete Order</a>
+                        <a href="#" onClick={( event ) => { this.cancelOrder( event, elem.id ) }} className="orders-single__cancel-button nostyle-links">Cancel Order</a>
                     </div>
                     {( this.state.pop_open === true && elem.id === this.state.pop_id ) && <PopDetails popContent={popContent} />}
                 </div>

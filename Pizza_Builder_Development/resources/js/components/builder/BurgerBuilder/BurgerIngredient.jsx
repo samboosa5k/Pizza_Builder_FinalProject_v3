@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import './burgeringredient.css';
 
-const individualCount = 5;
-const xLimit = 16;
-const yLimit = 64;
+const startHeight = 32;
 
 class BurgerIngredient extends Component {
     constructor( props ) {
@@ -31,7 +29,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 64 + ( 8 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/mozzarella.svg" alt="" />
                     </div>;
                 break;
@@ -39,7 +37,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 64 + ( 8 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/cheddar.svg" alt="" />
                     </div>;
                 break;
@@ -47,7 +45,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/bacon.svg" alt="" />
                     </div>;
                 break;
@@ -55,7 +53,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/basil.svg" alt="" />
                     </div>;
                 break;
@@ -63,7 +61,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/olives.svg" alt="" />
                     </div>;
                 break;
@@ -71,14 +69,14 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/mushroom.svg" alt="" />
                     </div>;
             case ( 'Corn' ):
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/corn.svg" alt="" />
                     </div>;
                 break;
@@ -86,7 +84,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/feta.svg" alt="" />
                     </div>;
                 break;
@@ -94,7 +92,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/chili.svg" alt="" />
                     </div>;
                 break;
@@ -102,7 +100,7 @@ class BurgerIngredient extends Component {
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
                 ingredient =
-                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: 96 + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
+                    <div className="Topping" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/pepperoni.svg" alt="" />
                     </div>;
                 break;
