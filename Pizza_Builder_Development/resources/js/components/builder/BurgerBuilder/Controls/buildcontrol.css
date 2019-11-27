@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
+    margin: 3px 0;
     width: 100%;
 }
 
@@ -18,14 +18,15 @@
     width: 48px;
     height: 48px;
     font: inherit;
-    border: 1px solid #AA6817;
+    border: 1px dashed white;
+    border-radius: 6rem;
     cursor: pointer;
     outline: none;
 }
 
 .BuildControl button:disabled {
     background-color: #AC9980;
-    border: 1px solid #7E7365;
+    border: 1px dashed white;
     color: #ccc;
     cursor: default;
 }
@@ -38,7 +39,7 @@
 
 .Label {
     padding: 10px;
-    font-weight: bold;
+    font-family: 'Gloria Hallelujah', cursive;
     /* width: 80px; */
 }
 
@@ -48,7 +49,7 @@
 }
 
 .BuildControl .More {
-    background-color: #8F5E1E;
+    background-color: #eeba00;
     color: white;
 }
 
