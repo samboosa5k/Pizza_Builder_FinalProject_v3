@@ -49,7 +49,12 @@ class Orders extends React.Component {
         this.setState( prevState => ( { pop_open: !prevState.pop_open, pop_id: id, popContent: details } ) );
     }
 
-    completeOrder( event, id ) {
+    completeOrder( event, id, index ) {
+        let newApiResponse = this.state.apiResponse;
+        console.log( 'Before api change', newApiResponse );
+        newApiResponse.splice( index, 1 );
+        console.log( 'After api change', newApiResponse );
+
         console.log( 'Orders.jsx -> completeOrder', id );
         fetch( '/order/update', {  // FETCH -> update
             method: 'PUT',
@@ -67,7 +72,6 @@ class Orders extends React.Component {
             .then( response => response.json() )
             .then( data => {
                 console.log( 'Orders.jsx -> server response', JSON.stringify( data ) );
-                // this.setState( {} )
             } ).then(
                 fetch( '/email/complete/', {  // FETCH -> update
                     method: 'POST',
@@ -86,8 +90,7 @@ class Orders extends React.Component {
                         console.log( 'Orders.jsx -> server response', JSON.stringify( data ) );
                     } )
             )
-
-
+        this.setState( { apiResponse: newApiResponse } );
     }
 
     cancelOrder( event, id ) {
