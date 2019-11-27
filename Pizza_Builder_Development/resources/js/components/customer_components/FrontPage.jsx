@@ -8,13 +8,20 @@ const FrontPage = ( props ) => {
 
     return (
         <>
-            <Redirect to='/home' />
+        <Redirect to='/home' />
             <h1 className="splash-header">It's pizza time, baby!</h1>
-            <div className="info-card">
+            <div >
                 <div style={{ width: "100%", textAlign: "center" }}>
-                    <h2>This is the home page</h2>
-                    <p>Soon this will show the view created by Jayne & Adi</p>
+                    <button type="button" className="button roll-in-left">
+                        <img style={{width:'7rem'}}src="/image/Pepperoni-Pizza.png" alt=""/>
+                    </button>
                 </div>
+
+                <div className="bounce-in-bottom click-me">
+                    
+                    click me!
+                </div>
+
             </div>
         </>
     )
