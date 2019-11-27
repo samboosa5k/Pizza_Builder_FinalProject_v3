@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ProjectName from './ProjectName.jsx';
 import MenuLogo from './MenuLogo.jsx';
 import CornerCredits from '../general_components/CornerCredits.jsx';
@@ -38,7 +38,7 @@ const NavBar = ( props ) => {
                     <NavLink
                         className="menu-customer__item"
                         activeClassName="menu-customer__item--active"
-                        to='/contact'>Contact</NavLink>
+                        to='/order-lookup'>Order Lookup</NavLink>
 
                     {/* <NavLink
                         className="menu-customer__item"
