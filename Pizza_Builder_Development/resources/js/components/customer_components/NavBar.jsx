@@ -25,10 +25,10 @@ const NavBar = ( props ) => {
                         activeClassName="menu-customer__item--active"
                         to="/magic/builder">Build a Pizza</NavLink>
 
-                    <NavLink
+                    {/* <NavLink
                         className="menu-customer__item"
                         activeClassName="menu-customer__item--active"
-                        to="/checkout">Checkout (test)</NavLink>
+                        to="/checkout">Checkout (test)</NavLink> */}
 
                     <NavLink
                         className="menu-customer__item"
@@ -40,10 +40,10 @@ const NavBar = ( props ) => {
                         activeClassName="menu-customer__item--active"
                         to='/contact'>Contact</NavLink>
 
-                    <NavLink
+                    {/* <NavLink
                         className="menu-customer__item"
                         activeClassName="menu-customer__item--active"
-                        to='/receipt'>Receipt</NavLink>
+                        to='/receipt'>Receipt</NavLink> */}
 
                 </div>
                 <div className="menu-customer__bottom">

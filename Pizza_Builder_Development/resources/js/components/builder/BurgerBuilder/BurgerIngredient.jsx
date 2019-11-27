@@ -72,6 +72,7 @@ class BurgerIngredient extends Component {
                     <div className="Topping bounceInDown" style={{ zIndex: 100 + this.props.iteration, bottom: startHeight + ( 24 * ( this.props.iteration + 1 ) ) + "px" }}>
                         <img src="/image/mushroom.svg" alt="" />
                     </div>;
+                break;
             case ( 'Corn' ):
                 console.log( 'Burgeringredient.jsx', this.props.type );
 
