@@ -11,7 +11,7 @@ const burger = ( props ) => {
 
     if ( pizzaIngredientsOrder ) {
         transformerIngredients = pizzaIngredientsOrder.map( ( elem, index ) => {
-            return <BurgerIngredient type={elem} iteration={index} />
+            return <BurgerIngredient key={"ingredient_" + index} type={elem} iteration={index} />
         } )
 
     }

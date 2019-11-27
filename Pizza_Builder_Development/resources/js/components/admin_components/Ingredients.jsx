@@ -16,6 +16,10 @@ class Ingredients extends React.Component {
             } )
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     render() {
         let apiResponse = 'Loading...';
 

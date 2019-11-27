@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Mailable;
 
 use App\Mail\OrderConfirmedEmail;
+use App\Mail\OrderCompleteEmail;
+use App\Mail\OrderCancelledEmail;
 use App\Order;
-use App\Mail\TestEmail;
 
 class EmailController extends Controller
 {
@@ -29,4 +31,27 @@ class EmailController extends Controller
 
         //return ['message' => 'Mail successfully sent!'];
     }
+
+    public function complete(Request $request)
+    {
+        $order = Order::where('id', $request->input('id'))->get();
+
+        $name = $order->pluck('first_name');
+        $email = $order->pluck('email');
+
+
+        Mail::to($email)
+            ->send(new OrderCompleteEmail($name, $request->input('id')));
+    }
+
+    /*  public function cancelled($id)
+    {
+        $order = Order::where('id', $id)->get();
+
+        $name = $order->pluck('first_name');
+        $email = $order->pluck('email');
+
+        Mail::to($email)
+            ->send(new OrderCancelledEmail($name, $id));
+    } */
 }

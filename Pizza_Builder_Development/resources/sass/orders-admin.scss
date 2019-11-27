@@ -18,9 +18,26 @@
         }
 
         &__details-button {
+            margin-right: 1rem;
             padding: 0.5rem;
             color: black;
             background-color: rgba(130, 205, 248, 0.699);
+            text-shadow: 2px 2px 2px white;
+        }
+
+        &__complete-button {
+            margin-right: 1rem;
+            padding: 0.5rem;
+            color: black;
+            background-color: rgba(99, 248, 132, 0.753);
+            text-shadow: 2px 2px 2px white;
+        }
+
+        &__cancel-button {
+            margin-right: 1rem;
+            padding: 0.5rem;
+            color: black;
+            background-color: rgba(248, 99, 99, 0.753);
             text-shadow: 2px 2px 2px white;
         }
 

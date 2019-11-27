@@ -196,25 +196,7 @@
         </div>
         <div class="email-container__body">
             <p>Hello {{$name}},</p>
-            <p>We've received your Pizza Builder order...</p>
-            <div class="order-information__content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>{{$time}}</th>
-                            <th>{{$date}}</th>
-                            <th>{{$status}}</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <p>You're pizza is fresh out of the oven an will be on its way soon!</p>
         </div>
     </div>
 </body>

@@ -61,8 +61,7 @@ class AdminLogin extends React.Component {
                 body: JSON.stringify( {
                     'email': this.state.email,
                     'password': this.state.password
-                }
-                )
+                } )
             } )
                 .then( response => response.json() ).then( data => {
                     if ( data['message'] !== 'Authorized' ) {
@@ -121,7 +120,7 @@ class AdminLogin extends React.Component {
     }
 
     render() {
-        console.log( 'Step 2', 'AdminLogin.jsx reached, token is = ' + this.getToken() ); // Weird login bug troubleshooting
+        console.log( 'Step 2', 'AdminLogin.jsx reached' ); // Weird login bug troubleshooting
 
         //  Below if-condition checks what to do if status is logged in, OR if
         if ( this.state.status === 'logged_in' || window.localStorage.getItem( '_token' ) !== null ) {

@@ -66,9 +66,9 @@ class Admin extends React.Component {
                                 <Link to="/admin/available-ingredients">Available Ingredients</Link>
                             </li>
 
-                            <li id="registered-custoemrs" className="menu-admin__item">
+                            {/* <li id="registered-custoemrs" className="menu-admin__item">
                                 <Link to="/admin/registered-customers">Regsitered Customers</Link>
-                            </li>
+                            </li> */}
 
                             <li id="add-order" className="menu-admin__item">
                                 <Link to="/admin/add-order">Add Order</Link>

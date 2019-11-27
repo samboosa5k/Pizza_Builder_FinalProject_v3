@@ -1,15 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Ingredients from './Ingredients.jsx';
 import Orders from './Orders.jsx';
 import OrderCheckout from './OrderCheckout.jsx';
 
+
 class MainContent extends React.Component {
     constructor( props ) {
         super( props );
+
+    }
+
+    componentDidMount() {
+        console.log( 'MainContent.jsx -->', this.props.content );
     }
 
     render() {
-        console.log( 'Step 3', 'MainContent.jsx reached, token is = ' + this.props.token ); // Weird login bug troubleshooting
+        console.log( 'Step 3', 'MainContent.jsx reached' ); // Weird login bug troubleshooting
         return (
             <div className="mainContent-admin">
                 {
@@ -19,7 +27,8 @@ class MainContent extends React.Component {
                                 return <Ingredients />;
                                 break;
                             case 'open-orders':
-                                return <Orders token={this.props.token} />;
+                                return <Orders
+                                    token={this.props.token} />;
                                 break;
                             case 'add-order':
                                 return <OrderCheckout />;

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import history from './history'
 import NavBar from './customer_components/NavBar.jsx';
 import BurgerBuilder from './builder/BurgerBuilder/BurgerBuilder.jsx';
 import FrontPage from './customer_components/FrontPage.jsx';
 import Checkout from './customer_components/Checkout.jsx';
-import CheckoutExample from './customer_components/CheckoutExample.jsx';
 import Receipt from './customer_components/Receipt.jsx';
 import ReceiptExample from './customer_components/ReceiptExample.jsx';
 import About from './customer_components/About.jsx';
