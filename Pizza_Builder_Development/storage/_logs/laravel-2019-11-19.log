@@ -1,0 +1,12 @@
+[2019-11-19 15:06:36] production.ERROR: The C:\web\Bootcamp\PizzaBuilder3\Pizza_Builder_Development\bootstrap\cache directory must be present and writable. {"exception":"[object] (Exception(code: 0): The C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\bootstrap\\cache directory must be present and writable. at C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php:168)
+[stacktrace]
+#0 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(127): Illuminate\\Foundation\\PackageManifest->write(Array)
+#1 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(97): Illuminate\\Foundation\\PackageManifest->build()
+#2 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\PackageManifest.php(80): Illuminate\\Foundation\\PackageManifest->getManifest()
+#3 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterFacades.php(26): Illuminate\\Foundation\\PackageManifest->aliases()
+#4 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\RegisterFacades->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
