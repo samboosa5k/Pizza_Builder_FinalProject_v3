@@ -82,6 +82,7 @@ class Orders extends React.Component {
                 } )
                     .then( response => response.json() )
                     .then( data => {
+
                         console.log( 'Orders.jsx -> server response', JSON.stringify( data ) );
                     } )
             )
