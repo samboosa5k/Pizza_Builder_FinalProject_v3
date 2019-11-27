@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import NavBar from './customer_components/NavBar.jsx';
+// import NavBar from './customer_components/NavBar.jsx';
+import NewNav from './customer_components/NewNav.jsx';
 import BurgerBuilder from './builder/BurgerBuilder/BurgerBuilder.jsx';
 import FrontPage from './customer_components/FrontPage.jsx';
 import Checkout from './customer_components/Checkout.jsx';
@@ -32,7 +33,8 @@ const Home = ( { match } ) => {
         <>
             <Router>
 
-                <NavBar visibleOrNot={menuVisibility} />
+                {/* <NavBar visibleOrNot={menuVisibility} /> */}
+                <NewNav />
 
                 <div className='mainContent-customer'>
 
