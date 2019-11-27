@@ -8,7 +8,7 @@ import Checkout from './customer_components/Checkout.jsx';
 import Receipt from './customer_components/Receipt.jsx';
 import ReceiptExample from './customer_components/ReceiptExample.jsx';
 import About from './customer_components/About.jsx';
-import Contact from './customer_components/Contact.jsx';
+import OrderLookup from './customer_components/OrderLookup.jsx';
 
 import ErrorBoundary from './ErrorBoundary.jsx';
 
@@ -59,8 +59,8 @@ const Home = ( { match } ) => {
                         <About {...routeProps} />
                     )} />
 
-                    <Route exact path='/contact' render={( routeProps ) => (
-                        <Contact {...routeProps} />
+                    <Route exact path='/order-lookup' render={( routeProps ) => (
+                        <OrderLookup {...routeProps} />
                     )} />
 
                     <Route exact path='/receipt' render={( routeProps ) => (

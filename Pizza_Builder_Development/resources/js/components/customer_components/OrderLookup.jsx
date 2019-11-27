@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import Receipt from './Receipt.jsx';
 
-const Contact = () => {
-    const [orderData, setOrderData] = useState();
-    const [formValue, setFormValue] = useState( { email: '', ordernumber: '' } );
+const OrderLookup = () => {
+    // const [orderData, setOrderData] = useState();
+    const [formValue, setFormValue] = useState( { ordernumber: '' } );
+    const [receipt, setReceipt] = useState( { content: 'Your receipt will be shown here...' } );
 
-    const handleSubmit = () => {
-        console.log( 'contact submit', 'submit' );
+    const handleSubmit = ( e ) => {
+        e.preventDefault();
+        setReceipt( { content: <Receipt orderId={formValue.ordernumber} /> } );
     }
 
     const handleChange = ( event ) => {
@@ -23,20 +26,20 @@ const Contact = () => {
             email = formValue['email'];
         }
 
-        setFormValue( { email: email, ordernumber: ordernumber } )
+        setFormValue( { email: email, ordernumber: ordernumber } );
     }
 
     return (
         <>
-            <h1 className="splash-header">Contact...</h1>
+            <h1 className="splash-header">Order Lookup...</h1>
             <div className="info-card">
                 <div style={{ width: "100%", textAlign: "center" }}>
                     <form onSubmit={handleSubmit}>
 
-                        <label className="admin-login__label" htmlFor="email">E-mail:</label>
-                        <input type="text" id="email" name="email" onChange={handleChange} />
+                        {/* <label className="admin-login__label" htmlFor="email">E-mail:</label>
+                        <input type="text" id="email" name="email" onChange={handleChange} /> */}
 
-                        <label className="admin-login__label" htmlFor="ordernumber">Order Nr:</label>
+                        <label className="admin-login__label" htmlFor="ordernumber">Order Nr: </label>
                         <input type="text" id="ordernumber" name="ordernumber" onChange={handleChange} />
 
                         <button type="submit" className="btn btn-default admin-login__button">Submit</button>
@@ -44,8 +47,9 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
+            {receipt.content}
         </>
     )
 }
 
-export default Contact;
+export default OrderLookup;

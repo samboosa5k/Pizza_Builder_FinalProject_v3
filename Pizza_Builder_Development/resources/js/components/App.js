@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 
 import Home from './Home.jsx';
+import Splash from './customer_components/Splash.jsx';
 import AdminLogin from './AdminLogin.jsx';
 import NavBar from './customer_components/NavBar.jsx';
 
@@ -47,7 +48,7 @@ class App extends React.Component {
                             <Home {...routeProps} />
                         )} />
 
-                        <Route path='/contact' render={( routeProps ) => (
+                        <Route path='/order-lookup' render={( routeProps ) => (
                             <Home {...routeProps} />
                         )} />
 

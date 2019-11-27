@@ -25,6 +25,10 @@ Route::get('/about', function () {
     return view('index');
 });
 
+Route::get('/order-lookup', function () {
+    return view('index');
+});
+
 Route::get('/magic', function () {
     return view('index');
 });
