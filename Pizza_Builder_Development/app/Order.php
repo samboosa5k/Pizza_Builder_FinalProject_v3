@@ -37,8 +37,7 @@ class Order extends Model
             'order_id',
             'pizza_id',
             'id',
-            'pizza_id',
-
+            'pizza_id'
         );
     }
 }
