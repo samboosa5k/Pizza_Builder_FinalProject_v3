@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 const FrontPage = ( props ) => {
     useEffect( () => {
@@ -7,23 +8,30 @@ const FrontPage = ( props ) => {
     }, [] );
 
     return (
-        <>
+        <div className="main">
         <Redirect to='/home' />
-            <h1 className="splash-header">It's pizza time, baby!</h1>
+            <h1 style={{paddingTop: '10rem', textAlign: 'center'}}className="splash-header">It's pizza time, baby!</h1>
             <div >
                 <div style={{ width: "100%", textAlign: "center" }}>
                     <button type="button" className="button roll-in-left">
-                        <img style={{width:'7rem'}}src="/image/Pepperoni-Pizza.png" alt=""/>
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to="/magic/builder"><img style={{width:'10rem'}}src="/image/Pepperoni-Pizza.png" alt=""/></NavLink>
+                        
                     </button>
                 </div>
 
-                <div className="bounce-in-bottom click-me">
-                    
+               <div className="click-me bounce-in-bottom">
+                
+                <img style={{height: '10rem'}} src="/image/arrow.svg" alt=""/>
+               
+                <div className="bounce-in-bottom">
                     click me!
                 </div>
-
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
