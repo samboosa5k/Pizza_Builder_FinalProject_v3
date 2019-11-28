@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Ingredients from './Ingredients.jsx';
 import Orders from './Orders.jsx';
+import PastOrders from './PastOrders.jsx';
 import OrderCheckout from './OrderCheckout.jsx';
 
 
@@ -28,6 +29,10 @@ class MainContent extends React.Component {
                                 break;
                             case 'open-orders':
                                 return <Orders
+                                    token={this.props.token} />;
+                                break;
+                            case 'past-orders':
+                                return <PastOrders
                                     token={this.props.token} />;
                                 break;
                             case 'add-order':

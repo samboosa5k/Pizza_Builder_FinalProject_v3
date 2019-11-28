@@ -12,7 +12,7 @@ class CheckoutExample extends React.Component {
             postcode: '',
             city: '',
             csrf_token: '',
-            checkout_object: ''
+            /* checkout_object: '' */
         }
         this.handleChange = this.handleChange.bind( this );
         this.handleSubmit = this.handleSubmit.bind( this );
@@ -109,9 +109,9 @@ class CheckoutExample extends React.Component {
 
                     <hr />
 
-                    <div style={{ padding: 1 + "rem", backgroundColor: "white" }}>
+                    {/* <div style={{ padding: 1 + "rem", backgroundColor: "white" }}>
                         {JSON.stringify( this.state.checkout_object )}
-                    </div>
+                    </div> */}
                 </div>
 
             </>

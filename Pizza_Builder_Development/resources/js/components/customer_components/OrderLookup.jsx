@@ -3,8 +3,9 @@ import Receipt from './Receipt.jsx';
 
 const OrderLookup = () => {
     // const [orderData, setOrderData] = useState();
+    const originalContent = { content: 'Your receipt will be shown here...' };
     const [formValue, setFormValue] = useState( { ordernumber: '' } );
-    const [receipt, setReceipt] = useState( { content: 'Your receipt will be shown here...' } );
+    const [receipt, setReceipt] = useState( originalContent );
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
@@ -29,6 +30,11 @@ const OrderLookup = () => {
         setFormValue( { email: email, ordernumber: ordernumber } );
     }
 
+    const clearState = ( event ) => {
+        event.preventDefault();
+        setReceipt( originalContent );
+    }
+
     return (
         <>
             <h1 className="splash-header">Order Lookup...</h1>
@@ -43,7 +49,7 @@ const OrderLookup = () => {
                         <input type="text" id="ordernumber" name="ordernumber" onChange={handleChange} />
 
                         <button type="submit" className="btn btn-default admin-login__button">Submit</button>
-
+                        <button onClick={clearState} className="btn btn-default admin-login__button">Clear</button>
                     </form>
                 </div>
             </div>
