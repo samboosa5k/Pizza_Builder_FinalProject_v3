@@ -10,7 +10,7 @@ const About = ( props ) => {
                     <h2>The Team</h2>
                     <div className="avatar-group__container">
                         <AboutAvatar imageLink={"/image/avatars/jayne.png"} name={"Jayne"} />
-                        <AboutAvatar imageLink={"/image/avatars/jasper.png"} name={"Adi"} />
+                        <AboutAvatar imageLink={"/image/avatars/adi.png"} name={"Adi"} />
                         <AboutAvatar imageLink={"/image/avatars/jasper.png"} name={"Jasper"} />
                     </div>
                 </div>
@@ -34,7 +34,7 @@ const About = ( props ) => {
             <div className="info-card">
                 <div style={{ width: "100%", textAlign: "center" }}>
                     <h2>Special Thanks</h2>
-                    <p>Sam, Andrew, Jan, Tim, Slavo, Gerard, Riccardo and many more...</p>
+                    <p>Sam, Andrew, Jan, Tim, Slavo, Gérald, Riccardo and many more...</p>
                 </div>
             </div>
         </>

@@ -68,4 +68,12 @@
     &-single:nth-child(2n+1) {
         background-color: rgba(217, 236, 247, 0.699);
     }
+
+    &-single__complete:nth-child(2n) {
+        //
+    }
+
+    &-single__complete:nth-child(2n+1) {
+        //
+    }
 }

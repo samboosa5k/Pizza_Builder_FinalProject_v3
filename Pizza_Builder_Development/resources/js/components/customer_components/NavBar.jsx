@@ -6,10 +6,11 @@ import CornerCredits from '../general_components/CornerCredits.jsx';
 
 const NavBar = ( props ) => {
     const visibility = ( props.visibleOrNot ) ? "visible" : "hidden";
+    const visiblePosition = ( props.visibleOrNot ) ? "-320px" : "0";
 
     return (
         <>
-            <div className="menu-customer" style={{ visibility: visibility }}>
+            <div className="menu-customer" style={{ visibility: visibility, left: visiblePosition }}>
 
                 <ProjectName />
 
