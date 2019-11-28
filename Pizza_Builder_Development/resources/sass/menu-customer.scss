@@ -13,13 +13,13 @@
         flex-grow: 0;
         justify-content: center;
         align-items: center;
-        min-width: 256px;
+        // min-width: 256px;
         max-height: 256px;
         // // // margin-top: 2rem;
         padding-top: 4rem;
         padding-bottom: 4rem;
         // min-height: 128px;
-        border-bottom: 1px dashed coral;
+        // border-bottom: 1px dashed coral;
         background-image: url('/image/pizza_logo.svg');
         background-repeat: no-repeat;
         background-size: 40%;
@@ -48,13 +48,13 @@
         margin-top: 0.25rem;
         //background-color: rgb(52, 52, 63);
         color: white;
-        border-bottom: 1px dashed coral;
+        //border-bottom: 1px dashed coral;
         font-size: 1.25rem;
         text-shadow: 1px 1px 1px black;
         text-align: center;
         list-style-type: none;
         text-decoration: none;
-        font-family: 'Poiret One', cursive;
+        font-family: 'Special Elite', cursive;
 
         // &:nth-child(1) {
         //     margin-top: 2rem;
@@ -62,7 +62,7 @@
 
         &--active {
             background-color: rgba(0, 0, 0, 0.5);
-            border-bottom: 3px solid rgb(129, 250, 129);
+            border-bottom: 3px solid #eeba00;
         }
 
         a {

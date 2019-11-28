@@ -21,11 +21,34 @@
     }
 
     &__input {
-        margin-top: 1rem;
+        // margin-top: 1rem;
         margin-bottom: 1rem;
+        padding: .5rem;
     }
 
     &__button {
         margin-top: 1rem;
     }
+
+    &__label {
+        padding: .5rem;
+    }
+}
+
+.form-group {
+    background-color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxes {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.address {
+    width: 100%;
+    padding-left: 1rem;
 }

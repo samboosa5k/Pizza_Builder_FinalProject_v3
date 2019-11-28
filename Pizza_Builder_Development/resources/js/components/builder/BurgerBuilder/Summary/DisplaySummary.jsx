@@ -30,7 +30,7 @@ const orderSummary = ( props ) => {
             <ul className="pizza-builder__ordersummary-item nostyle-links">
                 {ingredientSummary}
             </ul>
-            <p className="pizza-builder__ordersummary-item"><strong>Total Price: {props.price.toFixed( 2 )}</strong></p>
+            <p className="pizza-builder__ordersummary-item"><strong>Total Price: €{props.price.toFixed( 2 )}</strong></p>
 
 
             {/* <Button className="Danger" clicked={props.purchaseCancelled}>CANCEL</Button> */}
