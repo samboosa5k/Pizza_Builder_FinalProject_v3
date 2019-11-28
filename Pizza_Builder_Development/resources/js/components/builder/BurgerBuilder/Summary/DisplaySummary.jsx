@@ -14,7 +14,7 @@ const orderSummary = ( props ) => {
                     <li key={igKey}>
                         <span style={{ textTransform: 'capitalize' }}>{igKey}</span>: {props.ingredients[igKey]}
                     </li>
-                );
+                ); 
             }
         } );
 
@@ -34,7 +34,7 @@ const orderSummary = ( props ) => {
 
 
             {/* <Button className="Danger" clicked={props.purchaseCancelled}>CANCEL</Button> */}
-            <Button className="OrderButton" clicked={collectSummaryForParent}>Checkout!</Button>
+            <Button className="order-summary-button" clicked={collectSummaryForParent}>Checkout!</Button>
         </div>
     )
 };

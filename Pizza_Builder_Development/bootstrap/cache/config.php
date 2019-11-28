@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:XModBNKtuweVwLQlAC7kzJcl5mTPr3NWZRe7Tiw4dZk=',
+    'key' => 'base64:0HdmApboY5ZzXfqjFFDPAfGGklpxBnpZ1CHgzAmGs+U=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -175,7 +175,11 @@
       'file' => 
       array (
         'driver' => 'file',
+<<<<<<< HEAD
         'path' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\framework/cache/data',
+=======
+        'path' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/framework/cache/data',
+>>>>>>> style3
       ),
       'memcached' => 
       array (
@@ -314,12 +318,20 @@
       'local' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\app',
+=======
+        'root' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/app',
+>>>>>>> style3
       ),
       'public' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\app/public',
+=======
+        'root' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/app/public',
+>>>>>>> style3
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -365,13 +377,21 @@
       'single' => 
       array (
         'driver' => 'single',
+<<<<<<< HEAD
         'path' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\logs/laravel.log',
+=======
+        'path' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/logs/laravel.log',
+>>>>>>> style3
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
+<<<<<<< HEAD
         'path' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\logs/laravel.log',
+=======
+        'path' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/logs/laravel.log',
+>>>>>>> style3
         'level' => 'debug',
         'days' => 14,
       ),
@@ -428,8 +448,8 @@
     'port' => '2525',
     'from' => 
     array (
-      'address' => 'jasper.verbon@gmail.com',
-      'name' => 'Pizza_Builder_Admin',
+      'address' => 'from@example.com',
+      'name' => 'Example',
     ),
     'username' => NULL,
     'password' => NULL,
@@ -508,7 +528,11 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
+<<<<<<< HEAD
     'files' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\framework/sessions',
+=======
+    'files' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/framework/sessions',
+>>>>>>> style3
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -528,9 +552,15 @@
   array (
     'paths' => 
     array (
+<<<<<<< HEAD
       0 => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\resources\\views',
     ),
     'compiled' => 'C:\\web\\Bootcamp\\PizzaBuilder3\\Pizza_Builder_Development\\storage\\framework\\views',
+=======
+      0 => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/resources/views',
+    ),
+    'compiled' => '/Users/jaynephillips/webdevelopment/Pizza_Builder_FinalProject_v3/Pizza_Builder_Development/storage/framework/views',
+>>>>>>> style3
   ),
   'flare' => 
   array (

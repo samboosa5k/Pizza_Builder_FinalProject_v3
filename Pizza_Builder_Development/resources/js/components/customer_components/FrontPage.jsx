@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 const FrontPage = ( props ) => {
     useEffect( () => {
@@ -7,16 +8,30 @@ const FrontPage = ( props ) => {
     }, [] );
 
     return (
-        <>
-            <Redirect to='/home' />
-            <h1 className="splash-header">It's pizza time, baby!</h1>
-            <div className="info-card">
+        <div className="main">
+        <Redirect to='/home' />
+            <h1 style={{paddingTop: '10rem', textAlign: 'center'}}className="splash-header">It's pizza time, baby!</h1>
+            <div >
                 <div style={{ width: "100%", textAlign: "center" }}>
-                    <h2>This is the home page</h2>
-                    <p>Soon this will show the view created by Jayne & Adi</p>
+                    <button type="button" className="button roll-in-left">
+                    <NavLink
+                        className="menu-customer__item"
+                        activeClassName="menu-customer__item--active"
+                        to="/magic/builder"><img style={{width:'10rem'}}src="/image/Pepperoni-Pizza.png" alt=""/></NavLink>
+                        
+                    </button>
+                </div>
+
+               <div className="click-me bounce-in-bottom">
+                
+                <img style={{height: '10rem'}} src="/image/arrow.svg" alt=""/>
+               
+                <div className="bounce-in-bottom">
+                    click me!
+                </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
