@@ -60,7 +60,6 @@ Route::group([
 ], function () {
     Route::get('/management', 'ManagementController@index');
     Route::get('order/status/{status}/', 'OrderController@index');  //  Show orders based on status
-
 });
 
 //  Pizza Controller

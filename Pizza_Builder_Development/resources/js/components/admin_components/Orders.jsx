@@ -115,6 +115,9 @@ class Orders extends React.Component {
                         <span>
                             Ordered At: <span className="orders-single__element">{elem.created_at}</span>
                         </span>
+                        <span>
+                            Status: <span className="orders-single__element">{elem.status}</span>
+                        </span>
                     </div>
                     <hr />
                     <div className="orders-single__bottom-menu">
