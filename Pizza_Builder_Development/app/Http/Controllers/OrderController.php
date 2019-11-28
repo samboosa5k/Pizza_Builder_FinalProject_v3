@@ -16,7 +16,7 @@ class OrderController extends Controller
 {
     public function index($status)
     {
-        $orders = Order::where('status', 'in_progress')
+        $orders = Order::where('status', $status)
             ->with('pizzas');   // GET orders with status in_progress
 
         $orders = $orders->get();
