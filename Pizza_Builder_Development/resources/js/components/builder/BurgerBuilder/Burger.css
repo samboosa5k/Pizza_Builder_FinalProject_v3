@@ -1,9 +1,10 @@
 .Burger {
     position: relative;
     transform: translate(0, 0);
-    width: 100%;
+    width: calc(100% - 256px);
     height: 85%;
     margin: auto;
+    margin-left: 256px;
     /* height: 250px; */
     overflow: hidden;
     text-align: center;

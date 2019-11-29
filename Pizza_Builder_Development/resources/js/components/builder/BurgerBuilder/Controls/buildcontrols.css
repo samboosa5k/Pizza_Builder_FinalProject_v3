@@ -10,7 +10,7 @@
     position: fixed;
     overflow: hidden;
     background-color: #1F2020;
-    /* box-shadow: 0 2px 1px #ccc; */
+    box-shadow: 4px 4px 4px #1a1a1a;
 }
 
 .OrderButton {

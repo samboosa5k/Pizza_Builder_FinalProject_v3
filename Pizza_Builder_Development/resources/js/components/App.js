@@ -6,6 +6,7 @@ import Home from './Home.jsx';
 import Splash from './customer_components/Splash.jsx';
 import AdminLogin from './AdminLogin.jsx';
 import NavBar from './customer_components/NavBar.jsx';
+import NewNav from './customer_components/NewNav.jsx';
 
 import ErrorBoundary from './ErrorBoundary.jsx';
 
