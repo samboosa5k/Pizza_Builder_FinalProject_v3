@@ -18,16 +18,18 @@ $break-large: 1280px;
     @media screen and (min-width: $break-small) {
         width: 18%;
         padding: 0;
+        left: 0 !important;
+        overflow: scroll;
     }
 
     @media screen and (min-width: $break-medium) {
         width: 256px;
         padding: 10px 20px;
+        overflow: hidden;
     }
 
     margin: 0;
     position: fixed;
-    overflow: hidden;
     background-color: #1F2020;
     box-shadow: 4px 4px 4px #1a1a1a;
 }

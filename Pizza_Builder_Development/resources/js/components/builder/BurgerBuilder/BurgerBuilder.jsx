@@ -5,20 +5,22 @@ import Burger from './Burger.jsx';
 import BuildControls from './Controls/BuildControls.jsx';
 import Modal from './Summary/Modal.jsx';
 import DisplaySummary from './Summary/DisplaySummary.jsx';
+import MobileIngredientsButton from '../../customer_components/MobileIngredientsButton';
 
 import ErrorBoundary from '../../ErrorBoundary.jsx';
 
-const INGREDIENT_PRICES = {
+/* const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
     meat: 1.3,
     bacon: 0.4
-}
+} */
 
 class BurgerBuilder extends Component {
     constructor( props ) {
         super( props );
         this.state = {
+            mobileVisible: null,
             ingredients: {},
             ingredientsList: [],
             ingredientsIds: [],
@@ -28,6 +30,7 @@ class BurgerBuilder extends Component {
             purchasable: false,
             purchasing: true
         }
+        this.setMobileMenuVisible = this.setMobileMenuVisible.bind( this );
         this.updatePurchaseState = this.updatePurchaseState.bind( this );
         this.addIngredientHandler = this.addIngredientHandler.bind( this );
         this.removeIngredientHandler = this.removeIngredientHandler.bind( this );
@@ -52,7 +55,6 @@ class BurgerBuilder extends Component {
                 //  (Below) dynamically fill state with list of ingredients
                 api_ingredientNames[data[key].name] = 0;
 
-
                 //  (Below) dynamically fill state with ingredient->ingredient-type key->value pairs
                 interface_ingredients.push( {
                     label: data[key].name,
@@ -62,10 +64,6 @@ class BurgerBuilder extends Component {
             }
             this.setState(
                 {
-                    /*
-                        Dear Jayne, I apologize for the mess...
-                        We might have to refactor this later
-                    */
                     ingredients: api_ingredientNames,
                     ingredientsList: interface_ingredients,
                     INGREDIENT_PRICES: api_ingredientPrices
@@ -73,6 +71,11 @@ class BurgerBuilder extends Component {
         }
         doFetch();
         this.props.setMenuVisibility( false );
+    }
+
+    setMobileMenuVisible() {
+        this.setState( { mobileVisible: !this.state.mobileVisible } );
+        console.log( 'BurgerBuilder.jsx', 'menu visibility toggled' );
     }
 
     updatePurchaseState( ingredients ) {
@@ -199,34 +202,37 @@ class BurgerBuilder extends Component {
         };
 
         return (
-            <ErrorBoundary>
-                <NewAux>
+            <>
 
-                    <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-                        <DisplaySummary
-                            ingredients={this.state.ingredients}
-                            price={this.state.totalPrice}
-                            purchaseCancelled={this.purchaseCancelHandler}
-                            purchaseContinued={this.purchaseContinueHandler}
-                        />
-                    </Modal>
-
-                    <Burger
-                        pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
-                    />
-
-                    <BuildControls
-                        ingredientsList={this.state.ingredientsList}
-                        ingredientAdded={this.addIngredientHandler}
-                        ingredientRemoved={this.removeIngredientHandler}
-                        disabled={disabledInfo}
-                        purchasable={this.state.purchasable}
-                        ordered={this.purchaseHandler}
+                <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+                    <DisplaySummary
+                        ingredients={this.state.ingredients}
                         price={this.state.totalPrice}
+                        purchaseCancelled={this.purchaseCancelHandler}
+                        purchaseContinued={this.purchaseContinueHandler}
                     />
+                </Modal>
 
-                </NewAux>
-            </ErrorBoundary>
+                <Burger
+                    pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
+                />
+
+                <MobileIngredientsButton
+                    setMobileMenuVisible={this.setMobileMenuVisible}
+                />
+
+                <BuildControls
+                    mobileVisible={this.state.mobileVisible}
+                    ingredientsList={this.state.ingredientsList}
+                    ingredientAdded={this.addIngredientHandler}
+                    ingredientRemoved={this.removeIngredientHandler}
+                    disabled={disabledInfo}
+                    purchasable={this.state.purchasable}
+                    ordered={this.purchaseHandler}
+                    price={this.state.totalPrice}
+                />
+
+            </>
         )
     }
 }
