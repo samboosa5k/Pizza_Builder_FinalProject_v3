@@ -16,12 +16,27 @@
 @import 'new-nav.scss';
 @import 'avatars.scss';
 
+// Jayne Builder merge
+@import 'pizza-build-controls.scss';
+@import 'pizza-build-single-control.scss';
+@import 'pizza-build-receipt.scss';
+@import 'pizza-build-theBuilder.scss';
+
+// Style for RESPONSIVE
+@import 'interface-responsive.scss';
+
 // Fonts
+/*
+    Number of fonts might need to reduce for performance?
+*/
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|PT+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Almarai|Special+Elite|Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');
+
+
+// GENERAL
 
 * {
     margin: 0;

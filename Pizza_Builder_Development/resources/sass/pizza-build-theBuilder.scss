@@ -1,0 +1,25 @@
+// BREAKPOINTS
+$break-small: 720px;
+$break-medium: 1080px;
+$break-large: 1280px;
+
+.Burger {
+    position: relative;
+    transform: translate(0, 0);
+
+    @media screen and (max-width: $break-small) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: $break-small) {
+        width: calc(100% - 256px);
+    }
+
+    height: 85%;
+    margin: auto;
+    /* margin-left: 256px; */
+    /* height: 250px; */
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

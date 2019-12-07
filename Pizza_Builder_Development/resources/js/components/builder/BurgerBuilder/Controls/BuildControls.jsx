@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './buildcontrols.css';
+// import './buildcontrols.css';
 import BuildControl from './BuildControl.jsx';
 
 import ProjectName from '../../../customer_components/ProjectName';

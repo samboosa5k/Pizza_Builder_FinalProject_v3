@@ -1,3 +1,8 @@
+// BREAKPOINTS
+$break-small: 720px;
+$break-medium: 1080px;
+$break-large: 1280px;
+
 .menu-customer {
     display: flex;
     flex-direction: column;
@@ -13,19 +18,24 @@
         flex-grow: 0;
         justify-content: center;
         align-items: center;
-        // min-width: 256px;
         max-height: 256px;
-        // // // margin-top: 2rem;
         padding-top: 4rem;
         padding-bottom: 4rem;
-        // min-height: 128px;
-        // border-bottom: 1px dashed coral;
+
+        @media screen and (max-width: $break-small) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
         background-image: url('/image/pizza_logo.svg');
         background-repeat: no-repeat;
         background-size: 40%;
         background-position: center;
-
-        // border-bottom: 1px dashed coral;
     }
 
     &__bottom {
@@ -45,7 +55,7 @@
     }
 
     &__item {
-        padding: 1rem;
+
         margin-top: 0.25rem;
         //background-color: rgb(52, 52, 63);
         color: white;
@@ -55,7 +65,8 @@
         text-align: center;
         list-style-type: none;
         text-decoration: none;
-        font-family: 'Special Elite', cursive;
+        font-family: 'Special Elite',
+            cursive;
 
         // &:nth-child(1) {
         //     margin-top: 2rem;
