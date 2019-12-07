@@ -93,7 +93,7 @@ class CheckoutExample extends React.Component {
                             <label className="admin-login__label" htmlFor="city">City:</label>
                             <input type="text" className="admin-login__input" id="city" name="city" onChange={this.handleChange} />
                         </div>
-                    </div>                        <button style={{ width: '100px', padding: '.5rem', borderRadius: '3rem', fontSize: '18px', color: 'white', backgroundColor: 'coral', boxShadow: '1px 1px 1px grey', cursor: 'pointer' }} type="submit" className="btn btn-default admin-login__button">Submit</button>
+                    </div>                        <button style={{ width: '100px', padding: '.5rem', borderRadius: '3rem', fontSize: '18px', color: 'white', backgroundColor: 'rgb(255, 174, 0)', boxShadow: '1px 1px 1px grey', cursor: 'pointer' }} type="submit" className="btn btn-default admin-login__button">Submit</button>
                 </form>
             </div>            </>
         )

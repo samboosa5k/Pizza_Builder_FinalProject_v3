@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ProjectName from './ProjectName.jsx';
 
 class Receipt extends Component {
     constructor( props ) {
@@ -73,6 +74,7 @@ class Receipt extends Component {
         return (
             <div className="receipt">
                 <div style={{ width: "100%", textAlign: "center" }}>
+                    <ProjectName />
                     <div>
                         <p>********************************************</p>
                         <h2>RECEIPT</h2>
