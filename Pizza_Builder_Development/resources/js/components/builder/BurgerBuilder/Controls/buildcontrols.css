@@ -9,10 +9,9 @@
     padding: 10px 20px;
     position: fixed;
     overflow: hidden;
-    background-color: #1f2020;
-    /* box-shadow: 0 2px 1px #ccc; */
+    background-color: #1F2020;
+    box-shadow: 4px 4px 4px #1a1a1a;
 }
-
 
 .OrderButton {
     background-color: #DAD735;

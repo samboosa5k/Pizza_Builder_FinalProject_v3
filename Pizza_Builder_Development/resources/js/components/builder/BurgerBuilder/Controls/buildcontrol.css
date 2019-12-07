@@ -8,7 +8,11 @@
 
 .BuildControl:nth-child(2n) {
     background-color: #333;
+<<<<<<< HEAD
     padding: 0 1.5rem;
+=======
+    padding: .4rem 1.5rem;
+>>>>>>> new_nav_integration
 }
 
 .BuildControl-MoreOrLess {
@@ -44,7 +48,7 @@
 
 .Label {
     padding: 10px;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Special Elite', cursive;
     /* width: 80px; */
 }
 
@@ -54,7 +58,7 @@
 }
 
 .BuildControl .More {
-    background-color: #eeba00;
+    background-color: #EEBA00;
     color: white;
 }
 
@@ -66,6 +70,8 @@
 
 .BuildControl .More:hover,
 .BuildControl .More:active {
-    background-color: #99703F;
+    font-size: 1.25rem;
+    border: 2px solid rgb(192, 115, 0);
+    background-color: rgb(255, 174, 0);
     color: white;
 }

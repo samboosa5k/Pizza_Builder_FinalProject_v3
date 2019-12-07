@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ProjectName from './ProjectName.jsx';
 
 class Receipt extends Component {
     constructor( props ) {
@@ -19,7 +20,7 @@ class Receipt extends Component {
     }
 
     render() {
-        let content = 'Loading';
+        let content = 'Loading...';
 
         if ( this.state.apiResponse ) {
             const items = this.state.apiResponse.items;
@@ -53,7 +54,7 @@ class Receipt extends Component {
                     </div>
                     <p style={{ textAlign: 'left' }}>Your order:</p>
                     <div className="flex">
-                        <ul>
+                        <ul style={{ textAlign: 'left' }}>
                             {
                                 itemName.map( ( elem, index ) => {
                                     return <li>{elem} x {itemAmount[index]}</li>
@@ -73,13 +74,14 @@ class Receipt extends Component {
         return (
             <div className="receipt">
                 <div style={{ width: "100%", textAlign: "center" }}>
+                    <ProjectName />
                     <div>
-                        <p>**********************************</p>
+                        <p>********************************************</p>
                         <h2>RECEIPT</h2>
-                        <p>**********************************</p>
+                        <p>********************************************</p>
                     </div>
                     {content}
-                    <div style={{ paddingTop: '15px' }}>***********THANK YOU***********</div>
+                    <div style={{ paddingTop: '15px' }}>**************THANK YOU**************</div>
                 </div>
             </div>
         )
