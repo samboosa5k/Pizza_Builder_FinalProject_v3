@@ -11,11 +11,7 @@ import BurgerIngredient from './BurgerIngredient.jsx';
 
 
 const burger = ( props ) => {
-    const {
-        pizzaIngredientsOrder
-    }
-
-        = props;
+    const { pizzaIngredientsOrder } = props;
 
     let transformerIngredients = '';
 

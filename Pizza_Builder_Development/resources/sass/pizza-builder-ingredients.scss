@@ -3,23 +3,26 @@ $break-small: 720px;
 $break-medium: 1080px;
 $break-large: 1280px;
 
-.topping__crust {
-    img {
+.topping {
 
-        transform: translate(0, 64px);
+    &__crust,
+    &__general {
+        img {
 
-        @media screen and (max-width: $break-small) {
-            width: 100%;
-        }
+            transform: translate(0, 64px);
 
-        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-            width: 90%;
-            transform: 0;
-        }
+            @media screen and (max-width: $break-small) {
+                width: 100%;
+            }
 
-        @media screen and (min-width: $break-medium) {
-            width: 125%;
-            transform: 0;
+            @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+                width: 90%;
+            }
+
+            @media screen and (min-width: $break-medium) {
+                width: 125%;
+                transform: 0;
+            }
         }
     }
 }
