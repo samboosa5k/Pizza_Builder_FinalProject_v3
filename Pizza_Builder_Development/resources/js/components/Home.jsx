@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-<<<<<<< HEAD
 // import NavBar from './customer_components/NavBar.jsx';
-=======
-import NavBar from './customer_components/NavBar.jsx';
->>>>>>> new_nav_integration
 import NewNav from './customer_components/NewNav.jsx';
 import BurgerBuilder from './builder/BurgerBuilder/BurgerBuilder.jsx';
 import FrontPage from './customer_components/FrontPage.jsx';

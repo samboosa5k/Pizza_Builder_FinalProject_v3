@@ -1,38 +1,23 @@
 .navigation {
-<<<<<<< HEAD
-=======
     font-family: 'Special Elite', cursive;
 
->>>>>>> new_nav_integration
     &__checkbox {
         display: none;
     }
 
     &__button {
-<<<<<<< HEAD
-        border: 4px dotted whitesmoke; 
-        height: 5rem;
-        width: 5rem;
-        position: fixed;
-        top: 4rem;
-=======
         border: 4px dotted whitesmoke;
         height: 5rem;
         width: 5rem;
         position: fixed;
         bottom: 4rem;
->>>>>>> new_nav_integration
         right: 4rem;
         border-radius: 50%;
         z-index: 2000;
         box-shadow: 2px 2px 2px rgba(black, 0.1);
         text-align: center;
         cursor: pointer;
-<<<<<<< HEAD
-        background-image: radial-gradient( #333, #1f2020);
-=======
         background-image: radial-gradient(#333, #1F2020);
->>>>>>> new_nav_integration
     }
 
     &__background {
@@ -40,34 +25,19 @@
         width: 5.5rem;
         border-radius: 50%;
         position: fixed;
-<<<<<<< HEAD
-        top: 4rem;
-        right: 4rem;
-        background-image: radial-gradient( #333, #1f2020);
-        z-index: 1000;
-        transition: transform 0.8s  cubic-bezier(0.86, 0, 0.07, 1);
-    
-=======
         bottom: 4rem;
         right: 4rem;
         background-image: radial-gradient(#333, #1F2020);
         z-index: 1000;
         transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1.5);
->>>>>>> new_nav_integration
     }
 
     &__nav {
         height: 100vh;
         position: fixed;
         top: 0;
-<<<<<<< HEAD
-        left: 0;
-        z-index: 1500;
-
-=======
         right: 0;
         z-index: 1500;
->>>>>>> new_nav_integration
         opacity: 0;
         width: 0;
         transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -77,11 +47,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-<<<<<<< HEAD
-        transform: translate(-50%, -50%);
-=======
         transform: translate(-18%, -50%);
->>>>>>> new_nav_integration
         list-style: none;
         text-align: center;
         width: 100%;
@@ -92,21 +58,6 @@
     }
 
     &__link {
-<<<<<<< HEAD
-        &:link,
-        &:visited {
-        display: inline-block;
-        font-size: 3rem;
-        font-weight: 300;
-        padding: 1rem 2rem;
-        color: whitesmoke;
-        text-decoration: none;
-        text-transform: uppercase;
-        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #dd864a 50%);
-        background-size: 240%;
-        transition: all .4s;
-    }
-=======
 
         &:link,
         &:visited {
@@ -122,7 +73,6 @@
             transition: all .4s;
             font-family: "Special Elite", cursive;
         }
->>>>>>> new_nav_integration
 
         &:hover,
         &:active {
@@ -130,21 +80,6 @@
             color: black;
             transform: translateX(1rem);
         }
-<<<<<<< HEAD
-
-    }
-    //functionality
-
-    &__checkbox:checked ~ &__background {
-        transform: scale(20);
-
-    } 
-
-    &__checkbox:checked ~ &__nav {
-        opacity: 1;
-        width: 150%;
-    } 
-=======
     }
 
     //functionality
@@ -156,7 +91,6 @@
         opacity: 1;
         width: 150%;
     }
->>>>>>> new_nav_integration
 
     //icon
     &__icon {
@@ -181,10 +115,6 @@
             transition: all .2s;
         }
 
-<<<<<<< HEAD
-        &::before { top: -0.8rem; }
-        &::after { top: 0.8rem; }
-=======
         &::before {
             top: -0.8rem;
         }
@@ -192,25 +122,10 @@
         &::after {
             top: 0.8rem;
         }
->>>>>>> new_nav_integration
     }
 
     &__button:hover &__icon::before {
         top: -1rem;
-<<<<<<< HEAD
-
-    }
-
-    &__button:hover &__icon::after {
-        top: 1rem;   
-    }
-
-    &__checkbox:checked + &__button &__icon {
-        background-color: transparent;
-    }
-
-    &__checkbox:checked + &__button &__icon::before {
-=======
     }
 
     &__button:hover &__icon::after {
@@ -222,21 +137,12 @@
     }
 
     &__checkbox:checked+&__button &__icon::before {
->>>>>>> new_nav_integration
         top: 0;
         transform: rotate(135deg);
     }
 
-<<<<<<< HEAD
-    &__checkbox:checked + &__button &__icon::after {
-        top: 0;
-        transform: rotate(-135deg);
-    }
-}
-=======
     &__checkbox:checked+&__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
     }
 }
->>>>>>> new_nav_integration

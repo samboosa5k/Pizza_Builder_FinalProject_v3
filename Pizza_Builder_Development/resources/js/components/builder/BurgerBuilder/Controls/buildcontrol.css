@@ -8,11 +8,7 @@
 
 .BuildControl:nth-child(2n) {
     background-color: #333;
-<<<<<<< HEAD
     padding: 0 1.5rem;
-=======
-    padding: .4rem 1.5rem;
->>>>>>> new_nav_integration
 }
 
 .BuildControl-MoreOrLess {

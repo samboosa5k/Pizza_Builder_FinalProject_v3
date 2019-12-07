@@ -79,8 +79,8 @@
         -webkit-animation-timing-function: ease-out;
         animation-timing-function: ease-out;
     }
+}
 
-<<<<<<< HEAD
 .button {
     cursor: pointer;
 
@@ -88,98 +88,69 @@
     //   box-shadow: 0 2px 30px 0 rgb(218, 145, 10);
     //   height: 70px;
     //   width: 200px;
-      display: block;
-      margin: 0 auto;
-      font-size: 30px;
-      font-stretch: 100%;
-      border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    font-size: 30px;
+    font-stretch: 100%;
+    border-radius: 15px;
     //   border: white dotted;
-  }
+}
 
-  .button a {
-      text-decoration: none;
-      color: white;
-  }
+.button a {
+    text-decoration: none;
+    color: white;
+}
 
-  @keyframes roll-in-left {
+@keyframes roll-in-left {
     0% {
-      -webkit-transform: translateX(-800px) rotate(-540deg);
-              transform: translateX(-800px) rotate(-540deg);
-      opacity: 0;
+        -webkit-transform: translateX(-800px) rotate(-540deg);
+        transform: translateX(-800px) rotate(-540deg);
+        opacity: 0;
     }
-    100% {
-      -webkit-transform: translateX(0) rotate(0deg);
-              transform: translateX(0) rotate(0deg);
-      opacity: 1;
-    }
-  }
 
-  .roll-in-left {
-	-webkit-animation: roll-in-left 1.5s ease-out both;
-	        animation: roll-in-left 1.5s ease-out both;
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.roll-in-left {
+    -webkit-animation: roll-in-left 1.5s ease-out both;
+    animation: roll-in-left 1.5s ease-out both;
 }
 
 @keyframes bounce-in-bottom {
     0% {
-      -webkit-transform: translateY(500px);
-              transform: translateY(500px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-      opacity: 0;
+        -webkit-transform: translateY(500px);
+        transform: translateY(500px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
     }
+
     38% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-      opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
     }
+
     55% {
-      -webkit-transform: translateY(65px);
-              transform: translateY(65px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
+        -webkit-transform: translateY(65px);
+        transform: translateY(65px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
     }
+
     72% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
     }
-    81% {
-      -webkit-transform: translateY(28px);
-              transform: translateY(28px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    90% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    95% {
-      -webkit-transform: translateY(8px);
-              transform: translateY(8px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-  }
 
-  .bounce-in-bottom {
-	-webkit-animation: bounce-in-bottom 1.1s ease-in 1.3s both;
-	        animation: bounce-in-bottom 1.1s ease-in 1.3s both;
-}
-
-
-.click-me{
-=======
     81% {
         -webkit-transform: translateY(28px);
         transform: translateY(28px);
@@ -214,8 +185,8 @@
     animation: bounce-in-bottom 1.1s ease-in 1.3s both;
 }
 
+
 .click-me {
->>>>>>> new_nav_integration
     color: white;
     text-shadow: 3px 3px black;
     font-size: 3rem;
@@ -225,8 +196,4 @@
     justify-content: center;
     align-items: center;
     font-weight: 100;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> new_nav_integration
