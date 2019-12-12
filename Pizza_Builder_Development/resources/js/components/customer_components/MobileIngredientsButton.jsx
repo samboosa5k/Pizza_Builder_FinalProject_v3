@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 const MobileIngredientsButton = ( props ) => {
     return (
-        <a href="#">
-            <p className="mobileIngredients-button" onClick={props.setMobileMenuVisible}>Ingredients</p>
+        <a href="#" className="button-general button-mobileIngredients">
+            <p onClick={props.setMobileMenuVisible}>Ingredients</p>
         </a>
     );
 }

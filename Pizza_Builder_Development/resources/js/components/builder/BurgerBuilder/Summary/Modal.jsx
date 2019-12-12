@@ -4,17 +4,20 @@ import React from 'react';
 // import Aux from '../../../hoc/Aux.jsx';
 // import Backdrop from './Backdrop.jsx';
 
-const modal = ( props ) => (
+const modal = ( props ) => {
+    const visibleRight = ( props.mobileReceiptVisible === true ) ? 0 : "-100%";
 
-    <div
-        className="Modal"
-        style={{
-            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-            opacity: props.show ? '1' : '0'
-        }}>
-        {props.children}
-    </div>
+    return (
+        <div className="Modal"
+            style={{
+                right: visibleRight,
+                transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+                opacity: props.show ? '1' : '0'
+                }}>
+            {props.children}
+        </div>
+    )
 
-);
+};
 
 export default modal;
