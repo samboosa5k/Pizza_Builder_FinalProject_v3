@@ -1,0 +1,25 @@
+// BREAKPOINTS
+$break-small: 720px;
+$break-medium: 1280px;
+
+.Modal {
+    width: 256px;
+    padding: 16px;
+    position: fixed;
+    z-index: 500;
+
+    @media screen and (max-width: $break-small) {
+        right: -100%;
+    }
+
+    @media screen and (min-width: $break-small) {
+        right: 0 !important;
+    }
+
+    top: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}

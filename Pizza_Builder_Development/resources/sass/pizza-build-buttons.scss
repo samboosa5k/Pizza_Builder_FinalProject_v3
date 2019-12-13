@@ -1,0 +1,69 @@
+// BREAKPOINTS
+$break-small: 720px;
+$break-medium: 1080px;
+$break-large: 1280px;
+
+.button {
+    &-general {
+        background-color: rgb(255, 174, 0);
+        box-shadow: 1px 1px 1px grey;
+        border-radius: 6rem;
+        text-align: center;
+        color: white;
+        outline: none;
+        cursor: pointer;
+        font: inherit;
+        width: 10rem;
+        padding: 12px;
+        margin: 10px;
+        font-weight: 550;
+    }
+
+    &-mobileIngredients {
+        @media screen and (max-width: $break-small) {
+            display: block;
+        }
+/*
+        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+            width: 90%;
+        } */
+
+        @media screen and (min-width: $break-small) {
+            display: none;
+        }
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &-mobileReceipt {
+        @media screen and (max-width: $break-small) {
+            display: block;
+        }
+/*
+        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+            width: 90%;
+        } */
+
+        @media screen and (min-width: $break-small) {
+            display: none;
+        }
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.Button:first-of-type {
+    margin-left: 2rem;
+}
+
+.Success {
+    color: #5C9210;
+}
+
+.Danger {
+    color: #944317;
+}

@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 
-import NewAux from '../hoc/NewAux.jsx';
 import Burger from './Burger.jsx';
 import BuildControls from './Controls/BuildControls.jsx';
 import Modal from './Summary/Modal.jsx';
 import DisplaySummary from './Summary/DisplaySummary.jsx';
+import MobileIngredientsButton from '../../customer_components/MobileIngredientsButton';
+import MobileReceiptButton from '../../customer_components/MobileReceiptButton';
 
 import ErrorBoundary from '../../ErrorBoundary.jsx';
 
-const INGREDIENT_PRICES = {
+/* const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
     meat: 1.3,
     bacon: 0.4
-}
+} */
 
 class BurgerBuilder extends Component {
     constructor( props ) {
         super( props );
         this.state = {
+            mobileVisible: null,
+            mobileReceiptVisible: null,
             ingredients: {},
             ingredientsList: [],
             ingredientsIds: [],
@@ -28,6 +31,9 @@ class BurgerBuilder extends Component {
             purchasable: false,
             purchasing: true
         }
+        this.setMobileMenuVisible = this.setMobileMenuVisible.bind( this );
+        this.setMobileReceiptVisible = this.setMobileReceiptVisible.bind( this );
+        this.hideAllMobileMenu = this.hideAllMobileMenu.bind( this );
         this.updatePurchaseState = this.updatePurchaseState.bind( this );
         this.addIngredientHandler = this.addIngredientHandler.bind( this );
         this.removeIngredientHandler = this.removeIngredientHandler.bind( this );
@@ -37,6 +43,11 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
+        /*
+            INGREDIENT FETCH
+            - Ingredients are loaded from the database
+            - If no ingredient items are displayed at the left in the builder, something is wrong
+        */
         const doFetch = async () => {
             const response = await fetch( '/api/ingredients' );
             const data = await response.json();
@@ -52,7 +63,6 @@ class BurgerBuilder extends Component {
                 //  (Below) dynamically fill state with list of ingredients
                 api_ingredientNames[data[key].name] = 0;
 
-
                 //  (Below) dynamically fill state with ingredient->ingredient-type key->value pairs
                 interface_ingredients.push( {
                     label: data[key].name,
@@ -62,17 +72,41 @@ class BurgerBuilder extends Component {
             }
             this.setState(
                 {
-                    /*
-                        Dear Jayne, I apologize for the mess...
-                        We might have to refactor this later
-                    */
                     ingredients: api_ingredientNames,
                     ingredientsList: interface_ingredients,
                     INGREDIENT_PRICES: api_ingredientPrices
                 } );
         }
+
+        /*
+            MOBILE MENU HIDER
+            - When clicking on the body, the mobile menus should hide
+        */
+        const detectHideMobileMenu = () => {
+            console.log( 'BurgerBuilder.jsx', 'detectHideMobileMenu initialized' );
+            document.body.addEventListener('click', this.hideAllMobileMenu)
+        }
+
+        /*
+            FINAL EXECUTION
+        */
         doFetch();
-        this.props.setMenuVisibility( false );
+        detectHideMobileMenu();
+        this.props.setMenuVisibility( false );  // HIDE main side menu and show ingredients (DEPRECATED)
+    }
+
+    setMobileMenuVisible() {
+        this.setState( { mobileVisible: !this.state.mobileVisible } );
+        console.log( 'BurgerBuilder.jsx', 'menu visibility toggled' );
+    }
+
+    setMobileReceiptVisible() {
+        this.setState( { mobileReceiptVisible: !this.state.mobileReceiptVisible } );
+        console.log( 'BurgerBuilder.jsx', 'receipt visibility toggled' );
+    }
+
+    hideAllMobileMenu(){
+        this.setState( { mobileVisible: null, mobileReceiptVisible: null } );
     }
 
     updatePurchaseState( ingredients ) {
@@ -199,34 +233,46 @@ class BurgerBuilder extends Component {
         };
 
         return (
-            <ErrorBoundary>
-                <NewAux>
+            <>
 
-                    <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-                        <DisplaySummary
-                            ingredients={this.state.ingredients}
-                            price={this.state.totalPrice}
-                            purchaseCancelled={this.purchaseCancelHandler}
-                            purchaseContinued={this.purchaseContinueHandler}
-                        />
+                <ErrorBoundary>
+                    <Modal
+                        mobileReceiptVisible={this.state.mobileReceiptVisible}
+                        show={this.state.purchasing}
+                        modalClosed={this.purchaseCancelHandler}>
+                                <DisplaySummary
+                                    ingredients={this.state.ingredients}
+                                    price={this.state.totalPrice}
+                                    purchaseCancelled={this.purchaseCancelHandler}
+                                    purchaseContinued={this.purchaseContinueHandler}
+                                />
                     </Modal>
+                </ErrorBoundary>
 
-                    <Burger
-                        pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
-                    />
+                <Burger
+                    pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}
+                />
 
-                    <BuildControls
-                        ingredientsList={this.state.ingredientsList}
-                        ingredientAdded={this.addIngredientHandler}
-                        ingredientRemoved={this.removeIngredientHandler}
-                        disabled={disabledInfo}
-                        purchasable={this.state.purchasable}
-                        ordered={this.purchaseHandler}
-                        price={this.state.totalPrice}
-                    />
+                <MobileIngredientsButton
+                    setMobileMenuVisible={this.setMobileMenuVisible}
+                />
 
-                </NewAux>
-            </ErrorBoundary>
+                <MobileReceiptButton
+                    setMobileReceiptVisible={this.setMobileReceiptVisible}
+                />
+
+                <BuildControls
+                    mobileVisible={this.state.mobileVisible}
+                    ingredientsList={this.state.ingredientsList}
+                    ingredientAdded={this.addIngredientHandler}
+                    ingredientRemoved={this.removeIngredientHandler}
+                    disabled={disabledInfo}
+                    purchasable={this.state.purchasable}
+                    ordered={this.purchaseHandler}
+                    price={this.state.totalPrice}
+                />
+
+            </>
         )
     }
 }

@@ -1,6 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React,
+{
+    useState,
+    useEffect
+}
 
-import "./Burger.css";
+    from 'react';
+
+// import "./Burger.css";
 import BurgerIngredient from './BurgerIngredient.jsx';
 
 
@@ -11,20 +17,33 @@ const burger = ( props ) => {
 
     if ( pizzaIngredientsOrder ) {
         transformerIngredients = pizzaIngredientsOrder.map( ( elem, index ) => {
-            return <BurgerIngredient key={"ingredient_" + index} type={elem} iteration={index} />
-        } )
+            return <BurgerIngredient key={
+                "ingredient_" + index
+            }
 
+                type={
+                    elem
+                }
+
+                iteration={
+                    index
+                }
+
+            />
+        }
+
+        )
     }
 
     //  console.log( 'Burger.jsx', pizzaIngredientsOrder );
 
-    return (
-        <div className="Burger">
+    return ( <div className="Burger"> {
+        transformerIngredients
+    }
 
-            {transformerIngredients}
+    </div> );
+}
 
-        </div>
-    );
-};
+    ;
 
 export default burger;

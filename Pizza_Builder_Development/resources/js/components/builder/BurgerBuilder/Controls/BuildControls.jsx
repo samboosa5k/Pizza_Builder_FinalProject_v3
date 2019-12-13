@@ -1,15 +1,15 @@
 import React from 'react';
 
-import './buildcontrols.css';
+// import './buildcontrols.css';
 import BuildControl from './BuildControl.jsx';
 
 import ProjectName from '../../../customer_components/ProjectName';
 
 const buildControls = ( props ) => {
+    const visibleLeft = ( props.mobileVisible === true ) ? 0 : "-100%";
     return (
-        <div className="menu-customer__item BuildControls">
+        <div className="menu-customer__item BuildControls" style={{ left: visibleLeft }}>
             <ProjectName />
-            {/* <p>Current Price: <strong>{props.price.toFixed( 2 )}</strong></p> */}
             {
                 props.ingredientsList.map( ctrl => (
                     <BuildControl
@@ -21,7 +21,7 @@ const buildControls = ( props ) => {
                         disabled={props.disabled[ctrl.type]} />
                 ) )
             }
-        </div>
+        </div >
     )
 };
 
