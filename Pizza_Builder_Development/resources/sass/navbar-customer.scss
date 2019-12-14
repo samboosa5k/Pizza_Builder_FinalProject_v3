@@ -1,0 +1,68 @@
+.navbar {
+    &-customer {
+        display:flex;
+        align-items: center;
+        z-index: 999;
+        position: fixed;
+        width: 100vw;
+        background-color: rgb(31, 32, 32);
+        box-shadow: 4px 4px 4px #1a1a1a;
+        @media screen and (max-width: $break-small) {
+            justify-content: center;
+        }
+
+        &__site-name {
+            width: auto;
+            height: 4rem;
+            margin-left: 1rem;
+            color: white;
+            background-color: rgb(31, 32, 32);
+            font-size: 2rem;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 0 0 3px black;
+        }
+
+        &__item {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            height: $navbar-customer-height;
+            margin-left: 1rem;
+            padding: 0 1rem 0 1rem;
+            color: white;
+            background-color: rgb(31, 32, 32);
+            font-size: 1.25rem;
+            text-shadow: 1px 1px 1px black;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Special Elite', cursive;
+
+            &-container {
+                display: flex;
+                justify-content: center;
+
+                @media screen and (max-width: $break-small) {
+                    display: none;
+                }
+
+            }
+
+            &--active {
+                background-color: rgba(0, 0, 0, 0.5);
+                border-bottom: 3px solid #eeba00;
+            }
+        }
+
+        &__mobilemenu-button {
+            position: fixed;
+            right: 1rem;
+            width: 32px;
+
+            div {
+                height: 5px;
+                background-color: white;
+                margin: 6px 0;
+            }
+        }
+    }
+}

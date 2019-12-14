@@ -23,35 +23,26 @@ $break-large: 1280px;
         @media screen and (max-width: $break-small) {
             display: block;
         }
-/*
-        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-            width: 90%;
-        } */
 
         @media screen and (min-width: $break-small) {
             display: none;
         }
 
         position: absolute;
-        top: 0;
-        left: 0;
+        bottom: 0;
     }
 
     &-mobileReceipt {
         @media screen and (max-width: $break-small) {
             display: block;
         }
-/*
-        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-            width: 90%;
-        } */
 
         @media screen and (min-width: $break-small) {
             display: none;
         }
 
         position: absolute;
-        top: 0;
+        top: $navbar-customer-height;
         right: 0;
     }
 }

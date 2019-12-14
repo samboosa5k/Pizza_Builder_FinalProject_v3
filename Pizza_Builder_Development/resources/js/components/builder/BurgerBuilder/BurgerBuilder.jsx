@@ -9,13 +9,6 @@ import MobileReceiptButton from '../../customer_components/MobileReceiptButton';
 
 import ErrorBoundary from '../../ErrorBoundary.jsx';
 
-/* const INGREDIENT_PRICES = {
-    salad: 0.5,
-    cheese: 0.4,
-    meat: 1.3,
-    bacon: 0.4
-} */
-
 class BurgerBuilder extends Component {
     constructor( props ) {
         super( props );
@@ -67,6 +60,7 @@ class BurgerBuilder extends Component {
                 interface_ingredients.push( {
                     label: data[key].name,
                     type: data[key].name,
+                    category: data[key].category,
                     id: data[key].id
                 } );
             }
@@ -234,20 +228,17 @@ class BurgerBuilder extends Component {
 
         return (
             <>
-
-                <ErrorBoundary>
-                    <Modal
-                        mobileReceiptVisible={this.state.mobileReceiptVisible}
-                        show={this.state.purchasing}
-                        modalClosed={this.purchaseCancelHandler}>
-                                <DisplaySummary
-                                    ingredients={this.state.ingredients}
-                                    price={this.state.totalPrice}
-                                    purchaseCancelled={this.purchaseCancelHandler}
-                                    purchaseContinued={this.purchaseContinueHandler}
-                                />
-                    </Modal>
-                </ErrorBoundary>
+                <Modal
+                    mobileReceiptVisible={this.state.mobileReceiptVisible}
+                    show={this.state.purchasing}
+                    modalClosed={this.purchaseCancelHandler}>
+                            <DisplaySummary
+                                ingredients={this.state.ingredients}
+                                price={this.state.totalPrice}
+                                purchaseCancelled={this.purchaseCancelHandler}
+                                purchaseContinued={this.purchaseContinueHandler}
+                            />
+                </Modal>
 
                 <Burger
                     pizzaIngredientsOrder={this.state.pizzaIngredientsOrder}

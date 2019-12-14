@@ -13,6 +13,7 @@ $break-medium: 1280px;
     }
 
     @media screen and (min-width: $break-small) {
+        top: $navbar-customer-height;
         right: 0 !important;
     }
 

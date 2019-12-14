@@ -1,3 +1,6 @@
+// GLOBAL style variables
+@import '_globals-customer.scss';
+
 // Style files
 @import 'menu-admin.scss';
 @import 'login-admin.scss';
@@ -7,14 +10,20 @@
 @import 'header.scss';
 @import 'splash-customer.scss';
 @import 'menu-customer.scss';
+@import 'menu-mobile.scss';
 @import 'builder-customer.scss';
 @import 'main-customer.scss';
 @import 'pizza-builder.scss';
 @import 'pizza-builder-ingredients.scss';
 @import 'receipt.scss';
 @import 'pizza-animation.scss';
-@import 'new-nav.scss';
 @import 'avatars.scss';
+
+// Navbar redesign
+@import 'navbar-customer.scss';
+
+// Circle menu
+@import 'new-nav.scss';
 
 // Jayne Builder merge
 @import 'pizza-build-controls.scss';

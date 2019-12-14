@@ -1,14 +1,10 @@
-// BREAKPOINTS
-$break-small: 720px;
-$break-medium: 1080px;
-$break-large: 1280px;
-
 .BuildControls {
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 256px;
-    height: 100%;
+    max-width: 256px;
+    // height: 100%;
+    top: $navbar-customer-height;
     left: 0;
 
     @media screen and (max-width: $break-small) {
@@ -16,21 +12,19 @@ $break-large: 1280px;
     }
 
     @media screen and (min-width: $break-small) {
-        width: 18%;
         padding: 0;
         left: 0 !important;
-        overflow: scroll;
     }
 
     @media screen and (min-width: $break-medium) {
-        width: 256px;
+        // width: 256px;
         padding: 10px 20px;
         overflow: hidden;
     }
 
     margin: 0;
     position: fixed;
-    background-color: #1F2020;
+    background-color: rgba(0,0,0,0.5);
     box-shadow: 4px 4px 4px #1a1a1a;
 }
 

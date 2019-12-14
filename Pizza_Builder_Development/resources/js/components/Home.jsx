@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-// import NavBar from './customer_components/NavBar.jsx';
-import NewNav from './customer_components/NewNav.jsx';
+import NavBar from './customer_components/navbar/NavBar.jsx';
+import MobileMenu from './customer_components/mobile_menu/MobileMenu.jsx';
 import BurgerBuilder from './builder/BurgerBuilder/BurgerBuilder.jsx';
 import FrontPage from './customer_components/FrontPage.jsx';
 import Checkout from './customer_components/Checkout.jsx';
@@ -15,26 +15,26 @@ import ErrorBoundary from './ErrorBoundary.jsx';
 
 const Home = ( { match } ) => {
     const [menuVisibility, setMenuVisibility] = useState( true );
-    const [ingredientProps, setIngredientProps] = useState( {
-        "pizza_1": {
-            "pizza_id": 2,
-            "pizza_ingredients": [3, 4, 4, 5]
-        },
-        "pizza_2": {
-            "pizza_id": 3,
-            "pizza_ingredients": [3, 4, 4, 5]
-        }
-    } );
+    const [menuVisibilityMobile, setMenuVisibilityMobile] = useState( false );
+    const [ingredientProps, setIngredientProps] = useState( {} );
 
     const [orderIngredients, setOrderIngredients] = useState( {} );
     const [orderId, setOrderId] = useState( 0 );
+
+    const mobileMenuToggle = () => {
+        setMenuVisibilityMobile( !menuVisibilityMobile );
+    }
 
     return (
         <>
             <Router>
 
-                {/* <NavBar visibleOrNot={menuVisibility} /> */}
-                <NewNav />
+                <NavBar
+                    mobileMenuToggle={mobileMenuToggle} />
+
+                {
+                    menuVisibilityMobile && <MobileMenu />
+                }
 
                 <div className='mainContent-customer'>
 
@@ -69,12 +69,6 @@ const Home = ( { match } ) => {
                         <ErrorBoundary>
                             <Receipt {...routeProps} ingredientProps={ingredientProps} orderId={orderId} />
                         </ErrorBoundary>
-                    )} />
-
-                    <Route exact path='/magic/receipt-example' render={( routeProps ) => (
-                        <ReceiptExample {...routeProps} ingredientProps={ingredientProps}
-                            orderId={orderId}
-                        />
                     )} />
 
                 </div>
